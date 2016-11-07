@@ -66,15 +66,19 @@
                             <constraint firstItem="8Xu-YV-dfB" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="27" id="ze0-xm-MN7"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="loadingLabel" destination="G9O-p9-JPO" id="fgy-6m-nzM"/>
+                        <segue destination="Tet-gi-UPT" kind="show" identifier="showIngredients" id="sMJ-02-fcs"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="31.875" y="37.5"/>
         </scene>
-        <!--View Controller-->
+        <!--IngredientsVC-->
         <scene sceneID="gGL-p4-kBE">
             <objects>
-                <viewController id="Tet-gi-UPT" sceneMemberID="viewController">
+                <viewController id="Tet-gi-UPT" customClass="IngredientsVC" customModule="DeepFoodie" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="CZB-Wo-0te"/>
                         <viewControllerLayoutGuide type="bottom" id="LcW-3c-ciC"/>
@@ -90,7 +94,7 @@
                                     <constraint firstAttribute="height" constant="544" id="pad-8a-yEl"/>
                                 </constraints>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="Xg0-de-HsF">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" id="Xg0-de-HsF">
                                         <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Xg0-de-HsF" id="LYR-Zl-uCh">
@@ -108,7 +112,8 @@
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ak7-nf-T2f">
                                 <rect key="frame" x="16" y="617" width="343" height="30"/>
-                                <state key="normal" title="Button"/>
+                                <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="23"/>
+                                <state key="normal" title="Get Recipes"/>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="0.70980392160000005" blue="0.5568627451" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -129,7 +134,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6CZ-Tc-PqP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="791.20000000000005" y="38.23088455772114"/>
+            <point key="canvasLocation" x="1140" y="37"/>
         </scene>
     </scenes>
     <resources>

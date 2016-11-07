@@ -13,6 +13,15 @@ import ImagePicker
 
 
 class ViewController: UIViewController,ImagePickerDelegate {
+    
+    
+
+    @IBOutlet weak var loadingLabel: UILabel!
+    
+    var pred = [String:[String:Float]]()
+    var conceptName = [String]()
+    var conceptScore = [Float]()
+    var finalOP = [ClarifaiOutput]()
 
     @IBAction func cameraButton(_ sender: UIButton) {
         
@@ -30,6 +39,7 @@ class ViewController: UIViewController,ImagePickerDelegate {
     }
     func doneButtonDidPress(_ imagePicker: ImagePickerController, images: [UIImage]) {
         imagePicker.dismiss(animated: true, completion: nil)
+        loadingLabel.isHidden = false
         let app = ClarifaiApp.init(appID: "VyvexuzVef1qsSuW_ZQyE6iUW_H1DKiWXMieAruL", appSecret: "3W8Y3AHV-26n6hbyYeJv_6uqM2vAOkpiEnN9QeFW")
 
         app?.getModelByName("food-items-v1.0", completion: { (model, error) in
@@ -51,16 +61,23 @@ class ViewController: UIViewController,ImagePickerDelegate {
                         print("some error in the output \(error)")
                         
                     } else {
-                        for op in output! {
-                            print("Input ID: \(op.input.inputID)")
-                        for concept in (op.concepts)! {
-//                            print(concept.conceptID)
-                            print(concept.conceptName)
-                            print(concept.score)
-                        }
-                        }
+                        self.finalOP = output!
+//                        for op in output! {
+//                            print("Input ID: \(op.input.inputID)")
+//                        for concept in (op.concepts)! {
+////                            print(concept.conceptID)
+//                           // print(concept.conceptName)
+//                            //print(concept.score)
+//                        }
+//                        }
                         
+
                     }
+                    DispatchQueue.main.async {
+                        self.performSegue(withIdentifier: "showIngredients", sender: self)
+
+                    }
+
                 })
             }
         })
@@ -74,11 +91,19 @@ class ViewController: UIViewController,ImagePickerDelegate {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
+        //hide the extracting labels label.
+        loadingLabel.isHidden = true
         
         
         
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "showIngredients" {
+            let vc = segue.destination as! IngredientsVC
+            vc.pred = finalOP
+        }
+    }
     
 
     override func didReceiveMemoryWarning() {
