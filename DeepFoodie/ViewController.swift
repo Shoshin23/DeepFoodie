@@ -30,26 +30,34 @@ class ViewController: UIViewController,ImagePickerDelegate {
     }
     func doneButtonDidPress(_ imagePicker: ImagePickerController, images: [UIImage]) {
         imagePicker.dismiss(animated: true, completion: nil)
-        var app = ClarifaiApp.init(appID: "VyvexuzVef1qsSuW_ZQyE6iUW_H1DKiWXMieAruL", appSecret: "3W8Y3AHV-26n6hbyYeJv_6uqM2vAOkpiEnN9QeFW")
+        let app = ClarifaiApp.init(appID: "VyvexuzVef1qsSuW_ZQyE6iUW_H1DKiWXMieAruL", appSecret: "3W8Y3AHV-26n6hbyYeJv_6uqM2vAOkpiEnN9QeFW")
 
         app?.getModelByName("food-items-v1.0", completion: { (model, error) in
-            var clarifaiImg = ClarifaiImage.init(image: images.first)
+            var clarifaiImgArray = [ClarifaiImage]() //initialise an array of clarifai images.
+            
+            for image in images {
+                let img = ClarifaiImage.init(image: image)
+                clarifaiImgArray.append(img!)
+            }
+            
+            print(clarifaiImgArray.count)
             
             if error != nil {
                 print("some error here.")
             }
             else {
-                model?.predict(on: [clarifaiImg!], completion: { (output, error) in
+                model?.predict(on: clarifaiImgArray, completion: { (output, error) in
                     if error != nil {
                         print("some error in the output \(error)")
                         
                     } else {
-                        var op = output?[0]
-                        print(op!)
-                        
-                        for concept in (op?.concepts)! {
+                        for op in output! {
+                            print("Input ID: \(op.input.inputID)")
+                        for concept in (op.concepts)! {
+//                            print(concept.conceptID)
                             print(concept.conceptName)
                             print(concept.score)
+                        }
                         }
                         
                     }
