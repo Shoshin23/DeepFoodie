@@ -245,17 +245,20 @@
 					304EAD1D1DCFBAE100165530 = {
 						CreatedOnToolsVersion = 8.1;
 						DevelopmentTeam = P9S59S549S;
+						LastSwiftMigration = 0810;
 						ProvisioningStyle = Automatic;
 					};
 					304EAD311DCFBAE200165530 = {
 						CreatedOnToolsVersion = 8.1;
 						DevelopmentTeam = P9S59S549S;
+						LastSwiftMigration = 0810;
 						ProvisioningStyle = Automatic;
 						TestTargetID = 304EAD1D1DCFBAE100165530;
 					};
 					304EAD3C1DCFBAE200165530 = {
 						CreatedOnToolsVersion = 8.1;
 						DevelopmentTeam = P9S59S549S;
+						LastSwiftMigration = 0810;
 						ProvisioningStyle = Automatic;
 						TestTargetID = 304EAD1D1DCFBAE100165530;
 					};

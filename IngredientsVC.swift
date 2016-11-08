@@ -8,10 +8,12 @@
 
 import UIKit
 import Clarifai
+import Alamofire
 
-class IngredientsVC: UIViewController {
+class IngredientsVC: UIViewController,UITableViewDelegate,UITableViewDataSource {
     
-    var proper_pred = [String:Any]() //get the goddamn float!
+    @IBOutlet weak var tableView: UITableView!
+    var proper_pred = [String:Array<String>]() //get the goddamn float!
     
     var pred = [ClarifaiOutput]()
     override func viewDidLoad() {
@@ -33,7 +35,7 @@ class IngredientsVC: UIViewController {
             proper_pred[op.input.inputID] = conceptName
             conceptName.removeAll()
         }
-        print("Proper_Pred: \(proper_pred)")
+        //print("Proper_Pred: \(proper_pred)")
     }
 
     override func didReceiveMemoryWarning() {
@@ -41,7 +43,40 @@ class IngredientsVC: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    
+    //conforming to the TableView protocol.
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return proper_pred.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let pred = Array(self.proper_pred.values)[indexPath.row]
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as UITableViewCell
+        
+        cell.textLabel?.text = pred.first
+        return cell
+        
+    }
+    
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        
+        cell.textLabel?.font = UIFont(name: "Avenir", size: 18.0)
+    }
+    
 
+    @IBAction func getRecipeTapped(_ sender: UIButton) {
+        
+        let todoEndpoint: String = "https://jsonplaceholder.typicode.com/todos/1"
+        Alamofire.request(todoEndpoint).responseJSON { (resData) in
+            print(resData.result.value!)
+            
+//            let strOutput = String(data: resData.result.value!, encoding: String.Encoding.utf8)
+//            print(strOutput!)
+        }
+                
+        }
+    }
     /*
     // MARK: - Navigation
 
@@ -52,4 +87,4 @@ class IngredientsVC: UIViewController {
     }
     */
 
-}
+
