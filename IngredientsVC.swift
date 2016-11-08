@@ -11,20 +11,29 @@ import Clarifai
 
 class IngredientsVC: UIViewController {
     
-//    var pred = [String:[String:Float]]() //get the goddamn float!
+    var proper_pred = [String:Any]() //get the goddamn float!
     
     var pred = [ClarifaiOutput]()
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        var conceptName = [String]()
         for op in pred {
+           // print(op.input.inputID)
             for concept in (op.concepts) {
-                print("In the new VC")
-                print(concept.conceptName)
-                print(concept.score)
+//                print("In the new VC")
+                // print(op.input.inputID)
+                // print(concept.conceptName)
+                conceptName.append(concept.conceptName!)
+//                print(concept.score)
+                
+                
             }
+            proper_pred[op.input.inputID] = conceptName
+            conceptName.removeAll()
         }
+        print("Proper_Pred: \(proper_pred)")
     }
 
     override func didReceiveMemoryWarning() {
