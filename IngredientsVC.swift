@@ -9,11 +9,13 @@
 import UIKit
 import Clarifai
 import Alamofire
+import SwiftyJSON
 
 class IngredientsVC: UIViewController,UITableViewDelegate,UITableViewDataSource {
     
     @IBOutlet weak var tableView: UITableView!
     var proper_pred = [String:Array<String>]() //get the goddamn float!
+    let taboo_words = ["vegetable","juice","citrus"] //words that just dont convey any meaning. Are too generic.
     
     var pred = [ClarifaiOutput]()
     override func viewDidLoad() {
@@ -53,6 +55,14 @@ class IngredientsVC: UIViewController,UITableViewDelegate,UITableViewDataSource 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let pred = Array(self.proper_pred.values)[indexPath.row]
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as UITableViewCell
+        
+        
+        for word in taboo_words {
+            if let index = pred.index(of: word) {
+            pred.remove(at: index)
+        }
+        }
+        
         
         cell.textLabel?.text = pred.first
         return cell
