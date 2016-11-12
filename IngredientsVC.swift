@@ -53,7 +53,7 @@ class IngredientsVC: UIViewController,UITableViewDelegate,UITableViewDataSource 
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let pred = Array(self.proper_pred.values)[indexPath.row]
+        var pred = Array(self.proper_pred.values)[indexPath.row]
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as UITableViewCell
         
         
@@ -77,9 +77,9 @@ class IngredientsVC: UIViewController,UITableViewDelegate,UITableViewDataSource 
 
     @IBAction func getRecipeTapped(_ sender: UIButton) {
         
-        let todoEndpoint: String = "https://jsonplaceholder.typicode.com/todos/1"
+        let todoEndpoint: String = "https://api.edamam.com/search?q=chicken&app_id=bf407e95&app_key=4c736caf69fd27756ac3a660bf2e16f5"
         Alamofire.request(todoEndpoint).responseJSON { (resData) in
-            print(resData.result.value!)
+            print(resData.result.value)
             
 //            let strOutput = String(data: resData.result.value!, encoding: String.Encoding.utf8)
 //            print(strOutput!)
