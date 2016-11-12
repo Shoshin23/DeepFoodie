@@ -16,6 +16,7 @@ class IngredientsVC: UIViewController,UITableViewDelegate,UITableViewDataSource 
     @IBOutlet weak var tableView: UITableView!
     var proper_pred = [String:Array<String>]() //get the goddamn float!
     let taboo_words = ["vegetable","juice","citrus"] //words that just dont convey any meaning. Are too generic.
+    var recipes_JSON:JSON! = nil
     
     var pred = [ClarifaiOutput]()
     override func viewDidLoad() {
@@ -79,10 +80,12 @@ class IngredientsVC: UIViewController,UITableViewDelegate,UITableViewDataSource 
         
         let todoEndpoint: String = "https://api.edamam.com/search?q=chicken&app_id=bf407e95&app_key=4c736caf69fd27756ac3a660bf2e16f5"
         Alamofire.request(todoEndpoint).responseJSON { (resData) in
-            print(resData.result.value)
+            //print(resData.result.value)
             
-//            let strOutput = String(data: resData.result.value!, encoding: String.Encoding.utf8)
-//            print(strOutput!)
+            if((resData.result.value) != nil) {
+                self.recipes_JSON = JSON(resData.result.value!)
+                print(self.recipes_JSON)
+            }
         }
                 
         }
