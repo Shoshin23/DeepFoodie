@@ -124,11 +124,22 @@
                                     <action selector="getRecipeTapped:" destination="Tet-gi-UPT" eventType="touchUpInside" id="pCK-nu-wVv"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pCU-ep-KXt">
+                                <rect key="frame" x="32" y="23" width="30" height="38"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                <state key="normal" title="⬅︎">
+                                    <color key="titleColor" red="0.1058823529" green="0.1058823529" blue="0.1058823529" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <segue destination="BYZ-38-t0r" kind="show" id="IgJ-FQ-g1K"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="0.70980392160000005" blue="0.5568627451" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="qxr-Dl-OOA" firstAttribute="top" secondItem="yRA-Y4-lyD" secondAttribute="top" constant="65" id="63L-G0-ul4"/>
                             <constraint firstItem="qxr-Dl-OOA" firstAttribute="leading" secondItem="yRA-Y4-lyD" secondAttribute="leading" id="9vM-g0-OER"/>
+                            <constraint firstItem="bZN-7a-N3a" firstAttribute="leading" secondItem="pCU-ep-KXt" secondAttribute="trailing" constant="-46" id="BX7-Pi-zyX"/>
                             <constraint firstItem="Ak7-nf-T2f" firstAttribute="top" secondItem="qxr-Dl-OOA" secondAttribute="bottom" constant="8" id="Fi0-tn-IUC"/>
                             <constraint firstItem="Ak7-nf-T2f" firstAttribute="trailing" secondItem="bZN-7a-N3a" secondAttribute="trailing" id="RBU-Uc-Ati"/>
                             <constraint firstItem="bZN-7a-N3a" firstAttribute="leading" secondItem="yRA-Y4-lyD" secondAttribute="leadingMargin" id="ZGE-pM-zbB"/>
@@ -137,6 +148,7 @@
                             <constraint firstItem="bZN-7a-N3a" firstAttribute="centerX" secondItem="qxr-Dl-OOA" secondAttribute="centerX" id="d90-lD-XyI"/>
                             <constraint firstItem="LcW-3c-ciC" firstAttribute="top" secondItem="Ak7-nf-T2f" secondAttribute="bottom" constant="20" id="fCf-0l-qqM"/>
                             <constraint firstItem="Ak7-nf-T2f" firstAttribute="leading" secondItem="bZN-7a-N3a" secondAttribute="leading" id="ljx-rt-Fy7"/>
+                            <constraint firstItem="pCU-ep-KXt" firstAttribute="top" secondItem="CZB-Wo-0te" secondAttribute="bottom" constant="3" id="pK9-e1-d8F"/>
                             <constraint firstItem="qxr-Dl-OOA" firstAttribute="top" secondItem="bZN-7a-N3a" secondAttribute="bottom" constant="8" symbolic="YES" id="r7o-Fu-bEo"/>
                         </constraints>
                     </view>
@@ -147,7 +159,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6CZ-Tc-PqP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1140" y="36.431784107946029"/>
+            <point key="canvasLocation" x="993" y="37"/>
         </scene>
         <!--RecipesVC-->
         <scene sceneID="vsJ-do-9UK">
@@ -162,7 +174,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="72" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="9UX-c5-e6y">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <rect key="frame" x="0.0" y="102" width="375" height="565"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" textLabel="BNP-Uu-Mvl" detailTextLabel="X2j-Q7-9d3" rowHeight="72" style="IBUITableViewCellStyleSubtitle" id="LJi-uv-UAM">
@@ -195,11 +207,33 @@
                                     <outlet property="delegate" destination="MU2-RN-hDE" id="U3K-W7-jWu"/>
                                 </connections>
                             </tableView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your Recipes" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8in-Fi-Flf">
+                                <rect key="frame" x="16" y="28" width="343" height="36"/>
+                                <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="27"/>
+                                <color key="textColor" red="0.24313725489999999" green="0.1215686275" blue="0.42745098040000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WuU-yH-4nW">
+                                <rect key="frame" x="16" y="31" width="46" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <state key="normal" title="⬅︎">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <segue destination="Tet-gi-UPT" kind="show" id="g8D-nE-S2n"/>
+                                </connections>
+                            </button>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="1" green="0.70980392160000005" blue="0.5568627451" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="9UX-c5-e6y" firstAttribute="top" secondItem="mvf-8O-4H9" secondAttribute="top" id="9Fh-eO-8Mp"/>
+                            <constraint firstItem="8in-Fi-Flf" firstAttribute="leading" secondItem="mvf-8O-4H9" secondAttribute="leadingMargin" id="2rr-GB-bmi"/>
+                            <constraint firstItem="9UX-c5-e6y" firstAttribute="top" secondItem="mvf-8O-4H9" secondAttribute="top" constant="102" id="9Fh-eO-8Mp"/>
+                            <constraint firstItem="WuU-yH-4nW" firstAttribute="top" secondItem="d0O-hY-fss" secondAttribute="bottom" constant="11" id="Oxv-Tf-pTj"/>
+                            <constraint firstItem="9UX-c5-e6y" firstAttribute="top" secondItem="8in-Fi-Flf" secondAttribute="bottom" constant="38" id="XzS-3b-k7C"/>
+                            <constraint firstItem="8in-Fi-Flf" firstAttribute="leading" secondItem="WuU-yH-4nW" secondAttribute="trailing" constant="-46" id="avn-Ko-mIu"/>
                             <constraint firstItem="KWm-aH-gvu" firstAttribute="top" secondItem="9UX-c5-e6y" secondAttribute="bottom" id="hLG-sn-4Gp"/>
+                            <constraint firstItem="8in-Fi-Flf" firstAttribute="centerX" secondItem="9UX-c5-e6y" secondAttribute="centerX" id="mPu-E4-mX6"/>
+                            <constraint firstItem="8in-Fi-Flf" firstAttribute="top" secondItem="d0O-hY-fss" secondAttribute="bottom" constant="8" symbolic="YES" id="ptT-da-A6N"/>
                             <constraint firstItem="9UX-c5-e6y" firstAttribute="leading" secondItem="mvf-8O-4H9" secondAttribute="leading" id="vkT-14-fy8"/>
                             <constraint firstAttribute="trailing" secondItem="9UX-c5-e6y" secondAttribute="trailing" id="vkV-xg-5xj"/>
                         </constraints>
@@ -210,10 +244,13 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ewa-q2-vgT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1900" y="36.431784107946029"/>
+            <point key="canvasLocation" x="2039" y="37"/>
         </scene>
     </scenes>
     <resources>
         <image name="camera-upload" width="700" height="700"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="g8D-nE-S2n"/>
+    </inferredMetricsTieBreakers>
 </document>
