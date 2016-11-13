@@ -142,11 +142,30 @@
                     </view>
                     <connections>
                         <outlet property="tableView" destination="qxr-Dl-OOA" id="a7M-Ob-AHc"/>
+                        <segue destination="MU2-RN-hDE" kind="show" identifier="showRecipes" id="gnX-mf-N5s"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6CZ-Tc-PqP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1140" y="36.431784107946029"/>
+        </scene>
+        <!--RecipesVC-->
+        <scene sceneID="vsJ-do-9UK">
+            <objects>
+                <viewController id="MU2-RN-hDE" customClass="RecipesVC" customModule="DeepFoodie" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="d0O-hY-fss"/>
+                        <viewControllerLayoutGuide type="bottom" id="KWm-aH-gvu"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="mvf-8O-4H9">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ewa-q2-vgT" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1900" y="37"/>
         </scene>
     </scenes>
     <resources>

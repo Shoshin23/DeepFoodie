@@ -15,6 +15,7 @@
 		304EAD2C1DCFBAE100165530 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 304EAD2A1DCFBAE100165530 /* LaunchScreen.storyboard */; };
 		304EAD371DCFBAE200165530 /* DeepFoodieTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 304EAD361DCFBAE200165530 /* DeepFoodieTests.swift */; };
 		304EAD421DCFBAE200165530 /* DeepFoodieUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 304EAD411DCFBAE200165530 /* DeepFoodieUITests.swift */; };
+		3081086F1DD7AB77001526AC /* RecipesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3081086E1DD7AB77001526AC /* RecipesVC.swift */; };
 		30AE7D261DD0B75600132700 /* IngredientsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30AE7D251DD0B75600132700 /* IngredientsVC.swift */; };
 		58875117216FFF27EDD3BE54 /* Pods_DeepFoodie.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C988F505CA2AF66CB0F6463D /* Pods_DeepFoodie.framework */; };
 		A58B882C12E73A3373AFF743 /* Pods_DeepFoodieTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 64BFFF7B0F85CBBE9041E525 /* Pods_DeepFoodieTests.framework */; };
@@ -52,6 +53,7 @@
 		304EAD3D1DCFBAE200165530 /* DeepFoodieUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DeepFoodieUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		304EAD411DCFBAE200165530 /* DeepFoodieUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeepFoodieUITests.swift; sourceTree = "<group>"; };
 		304EAD431DCFBAE200165530 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3081086E1DD7AB77001526AC /* RecipesVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RecipesVC.swift; path = ../RecipesVC.swift; sourceTree = "<group>"; };
 		30AE7D251DD0B75600132700 /* IngredientsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = IngredientsVC.swift; path = ../IngredientsVC.swift; sourceTree = "<group>"; };
 		64BFFF7B0F85CBBE9041E525 /* Pods_DeepFoodieTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DeepFoodieTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6B4F8E232C723686DA34811F /* Pods-DeepFoodieUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DeepFoodieUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-DeepFoodieUITests/Pods-DeepFoodieUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -128,6 +130,7 @@
 			children = (
 				304EAD211DCFBAE100165530 /* AppDelegate.swift */,
 				304EAD231DCFBAE100165530 /* ViewController.swift */,
+				3081086E1DD7AB77001526AC /* RecipesVC.swift */,
 				30AE7D251DD0B75600132700 /* IngredientsVC.swift */,
 				304EAD251DCFBAE100165530 /* Main.storyboard */,
 				304EAD281DCFBAE100165530 /* Assets.xcassets */,
@@ -441,6 +444,7 @@
 			files = (
 				304EAD241DCFBAE100165530 /* ViewController.swift in Sources */,
 				30AE7D261DD0B75600132700 /* IngredientsVC.swift in Sources */,
+				3081086F1DD7AB77001526AC /* RecipesVC.swift in Sources */,
 				304EAD221DCFBAE100165530 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

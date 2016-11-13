@@ -15,12 +15,14 @@ class IngredientsVC: UIViewController,UITableViewDelegate,UITableViewDataSource 
     
     @IBOutlet weak var tableView: UITableView!
     var proper_pred = [String:Array<String>]() //get the goddamn float!
-    let taboo_words = ["vegetable","juice","citrus"] //words that just dont convey any meaning. Are too generic.
+    let taboo_words = ["vegetable","juice","citrus","sweet","pasture"] //words that just dont convey any meaning. Are too generic.
     var recipes_JSON:JSON! = nil
     
     var pred = [ClarifaiOutput]()
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+      
 
         // Do any additional setup after loading the view.
         var conceptName = [String]()
@@ -75,21 +77,51 @@ class IngredientsVC: UIViewController,UITableViewDelegate,UITableViewDataSource 
         cell.textLabel?.font = UIFont(name: "Avenir", size: 18.0)
     }
     
+//    func getRecipes(ingredients:[String]) {
+//       
+//    }
+    
+    
 
     @IBAction func getRecipeTapped(_ sender: UIButton) {
-        
         let todoEndpoint: String = "https://api.edamam.com/search?q=chicken&app_id=bf407e95&app_key=4c736caf69fd27756ac3a660bf2e16f5"
         Alamofire.request(todoEndpoint).responseJSON { (resData) in
             //print(resData.result.value)
             
             if((resData.result.value) != nil) {
                 self.recipes_JSON = JSON(resData.result.value!)
-                print(self.recipes_JSON)
+                //print(self.recipes_JSON)
+                //                    if (JSON(resData.result.value!) != nil ) {
+                //
+                //                    }
+                
+            }
+            
+            self.performSegue(withIdentifier: "showRecipes", sender:self)
+            
+        }
+        }
+        
+    
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "showRecipes" {
+            let vc = segue.destination as! RecipesVC
+            if recipes_JSON != nil {
+            vc.RecipesJSON = recipes_JSON
             }
         }
-                
+    }
+    
+    func delayWithSeconds(_ seconds: Double, completion: @escaping () -> ()) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + seconds) {
+            completion()
         }
     }
+    
+    }
+
+
     /*
     // MARK: - Navigation
 
