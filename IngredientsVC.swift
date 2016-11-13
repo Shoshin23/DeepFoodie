@@ -84,7 +84,7 @@ class IngredientsVC: UIViewController,UITableViewDelegate,UITableViewDataSource 
     
 
     @IBAction func getRecipeTapped(_ sender: UIButton) {
-        let todoEndpoint: String = "https://api.edamam.com/search?q=chicken&app_id=bf407e95&app_key=4c736caf69fd27756ac3a660bf2e16f5"
+        let todoEndpoint: String = "https://api.edamam.com/search?q=mango%20lemon&app_id=bf407e95&app_key=4c736caf69fd27756ac3a660bf2e16f5"
         Alamofire.request(todoEndpoint).responseJSON { (resData) in
             //print(resData.result.value)
             
