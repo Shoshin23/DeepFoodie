@@ -1,0 +1,6 @@
+framework module Pods_DeepFoodie {
+  umbrella header "Pods-DeepFoodie-umbrella.h"
+
+  export *
+  module * { export * }
+}
