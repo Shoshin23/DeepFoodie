@@ -18,6 +18,8 @@ class IngredientsVC: UIViewController,UITableViewDelegate,UITableViewDataSource 
     let taboo_words = ["vegetable","juice","citrus","sweet","pasture"] //words that just dont convey any meaning. Are too generic.
     var recipes_JSON:JSON! = nil
     
+    var ingredients = [String?]()
+    
     var pred = [ClarifaiOutput]()
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -41,6 +43,9 @@ class IngredientsVC: UIViewController,UITableViewDelegate,UITableViewDataSource 
             conceptName.removeAll()
         }
         //print("Proper_Pred: \(proper_pred)")
+        
+        
+
     }
 
     override func didReceiveMemoryWarning() {
@@ -65,12 +70,12 @@ class IngredientsVC: UIViewController,UITableViewDelegate,UITableViewDataSource 
             pred.remove(at: index)
         }
         }
-        
-        
+        ingredients.append(pred.first)
         cell.textLabel?.text = pred.first
         return cell
         
     }
+    
     
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         
@@ -84,16 +89,20 @@ class IngredientsVC: UIViewController,UITableViewDelegate,UITableViewDataSource 
     
 
     @IBAction func getRecipeTapped(_ sender: UIButton) {
-        let todoEndpoint: String = "https://api.edamam.com/search?q=mango%20lemon&app_id=bf407e95&app_key=4c736caf69fd27756ac3a660bf2e16f5"
+        
+        print("INGREDIENTS:\(ingredients)")
+        
+        
+        
+        //let queryString = "chicken"
+        let q2 = (ingredients as! [String]).joined(separator: "%20")
+        print(q2)//convert it to queryString to pass on to endpoint.
+        let todoEndpoint: String = "https://api.edamam.com/search?q=\(q2)&app_id=bf407e95&app_key=4c736caf69fd27756ac3a660bf2e16f5"
         Alamofire.request(todoEndpoint).responseJSON { (resData) in
             //print(resData.result.value)
             
             if((resData.result.value) != nil) {
                 self.recipes_JSON = JSON(resData.result.value!)
-                //print(self.recipes_JSON)
-                //                    if (JSON(resData.result.value!) != nil ) {
-                //
-                //                    }
                 
             }
             
