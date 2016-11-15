@@ -39,8 +39,8 @@ class RecipesVC: UIViewController,UITableViewDelegate,UITableViewDataSource {
         //print("DICT: \(dict)")
         cell.textLabel?.text = dict["recipe"]?["label"] as? String
         print(dict["recipe"]?["label"])
-        cell.detailTextLabel?.text = dict["recipe"]?["uri"] as? String
-        print(dict["recipe"]?["uri"])
+        cell.detailTextLabel?.text = dict["recipe"]?["url"] as? String
+        print(dict["recipe"]?["url"])
         return cell
     }
     
