@@ -97,7 +97,7 @@ class IngredientsVC: UIViewController,UITableViewDelegate,UITableViewDataSource 
         //let queryString = "chicken"
         let q2 = (ingredients as! [String]).joined(separator: "%20")
         print(q2)//convert it to queryString to pass on to endpoint.
-        let todoEndpoint: String = "https://api.edamam.com/search?q=\(q2)&app_id=bf407e95&app_key=4c736caf69fd27756ac3a660bf2e16f5"
+        let todoEndpoint: String = "https://api.edamam.com/search?q=\(q2)&app_id=5a766e57&app_key=1cd67b2c35c7307027efc4c6ad1f46e2"
         Alamofire.request(todoEndpoint).responseJSON { (resData) in
             //print(resData.result.value)
             
