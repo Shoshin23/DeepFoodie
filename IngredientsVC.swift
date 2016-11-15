@@ -106,6 +106,12 @@ class IngredientsVC: UIViewController,UITableViewDelegate,UITableViewDataSource 
                 
             }
             
+            if (resData.result.error != nil) {
+                let alert = UIAlertController(title: "Error", message: resData.result.error?.localizedDescription, preferredStyle: UIAlertControllerStyle.alert)
+                alert.addAction(UIAlertAction(title: "Ok.", style: UIAlertActionStyle.default, handler: nil))
+                self.present(alert, animated: true, completion: nil)
+            }
+            
             self.performSegue(withIdentifier: "showRecipes", sender:self)
             
         }

@@ -54,11 +54,17 @@ class ViewController: UIViewController,ImagePickerDelegate {
             
             if error != nil {
                 print("some error here.")
+                let alert = UIAlertController(title: "Error", message: error?.localizedDescription, preferredStyle: UIAlertControllerStyle.alert)
+                alert.addAction(UIAlertAction(title: "Ok.", style: UIAlertActionStyle.default, handler: nil))
+                self.present(alert, animated: true, completion: nil)
             }
             else {
                 model?.predict(on: clarifaiImgArray, completion: { (output, error) in
                     if error != nil {
                         print("some error in the output \(error)")
+                        let alert = UIAlertController(title: "Error", message: error?.localizedDescription, preferredStyle: UIAlertControllerStyle.alert)
+                        alert.addAction(UIAlertAction(title: "Ok.", style: UIAlertActionStyle.default, handler: nil))
+                        self.present(alert, animated: true, completion: nil)
                         
                     } else {
                         self.finalOP = output!
