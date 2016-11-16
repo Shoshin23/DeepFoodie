@@ -9,10 +9,13 @@
 import UIKit
 import SwiftyJSON
 
-class RecipesVC: UIViewController,UITableViewDelegate,UITableViewDataSource {
+class RecipesVC: UIViewController,UITableViewDataSource,UITableViewDelegate {
     
     @IBOutlet weak var recipesTableView: UITableView!
     var arrRes = [[String:AnyObject]]()
+    
+    var chosenURL = String()
+    var chosenLabel = String()
     
     var RecipesJSON:JSON!
 
@@ -44,8 +47,22 @@ class RecipesVC: UIViewController,UITableViewDelegate,UITableViewDataSource {
         return cell
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        var dict = arrRes[indexPath.row]
+        chosenURL = (dict["recipe"]?["url"] as? String)!
+        chosenLabel = (dict["recipe"]?["label"] as? String)!
+        performSegue(withIdentifier: "showRecipe", sender: self)
+        
+    }
     
-    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "showRecipe" {
+            let vc = segue.destination as! displayRecipeVC
+            vc.chosenLabel = chosenLabel
+            vc.chosenURL = chosenURL
+            
+        }
+    }
     
 
     override func didReceiveMemoryWarning() {
