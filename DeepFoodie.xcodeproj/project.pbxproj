@@ -138,10 +138,10 @@
 			children = (
 				304EAD211DCFBAE100165530 /* AppDelegate.swift */,
 				304EAD231DCFBAE100165530 /* ViewController.swift */,
-				3081086E1DD7AB77001526AC /* RecipesVC.swift */,
-				30AE7D251DD0B75600132700 /* IngredientsVC.swift */,
-				3048B1D21DDCE85F0080A837 /* displayRecipeVC.swift */,
 				30BE36451DE049FE00A909C9 /* ExtractLabelsVC.swift */,
+				30AE7D251DD0B75600132700 /* IngredientsVC.swift */,
+				3081086E1DD7AB77001526AC /* RecipesVC.swift */,
+				3048B1D21DDCE85F0080A837 /* displayRecipeVC.swift */,
 				304EAD251DCFBAE100165530 /* Main.storyboard */,
 				304EAD281DCFBAE100165530 /* Assets.xcassets */,
 				30FF91C71DE0B1BA009FD0DA /* Stackyard_PERSONAL_USE.ttf */,

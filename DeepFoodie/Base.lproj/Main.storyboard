@@ -123,6 +123,11 @@
                                 <fontDescription key="fontDescription" name="StackyardPERSONALUSE" family="Stackyard PERSONAL USE" pointSize="44"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
+                                        <color key="value" red="0.89956390539999997" green="0.89956390539999997" blue="0.89956390539999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ak7-nf-T2f" customClass="FlatButton" customModule="Material">
                                 <rect key="frame" x="20" y="672" width="374" height="44"/>
@@ -215,31 +220,25 @@
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="72" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="9UX-c5-e6y">
                                 <rect key="frame" x="0.0" y="102" width="414" height="634"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" red="0.92549019610000005" green="0.27450980390000002" blue="0.18039215689999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" textLabel="BNP-Uu-Mvl" detailTextLabel="X2j-Q7-9d3" rowHeight="72" style="IBUITableViewCellStyleSubtitle" id="LJi-uv-UAM">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="Cell" textLabel="BNP-Uu-Mvl" rowHeight="72" style="IBUITableViewCellStyleDefault" id="LJi-uv-UAM">
                                         <rect key="frame" x="0.0" y="28" width="414" height="72"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="LJi-uv-UAM" id="GDp-Ye-nvI">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="71"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="381" height="71"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="BNP-Uu-Mvl">
-                                                    <rect key="frame" x="15" y="18" width="34" height="21"/>
+                                                    <rect key="frame" x="15" y="0.0" width="364" height="71"/>
                                                     <autoresizingMask key="autoresizingMask"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Subtitle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="X2j-Q7-9d3">
-                                                    <rect key="frame" x="15" y="39" width="44" height="15"/>
-                                                    <autoresizingMask key="autoresizingMask"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                                    <nil key="textColor"/>
+                                                    <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="18"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" red="0.92549019610000005" green="0.27450980390000002" blue="0.18039215689999999" alpha="1" colorSpace="calibratedRGB"/>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
@@ -247,14 +246,14 @@
                                     <outlet property="delegate" destination="MU2-RN-hDE" id="U3K-W7-jWu"/>
                                 </connections>
                             </tableView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your Recipes" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8in-Fi-Flf">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Recipes" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8in-Fi-Flf">
                                 <rect key="frame" x="20" y="28" width="374" height="36"/>
-                                <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="27"/>
-                                <color key="textColor" red="0.24313725489999999" green="0.1215686275" blue="0.42745098040000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" name="StackyardPERSONALUSE" family="Stackyard PERSONAL USE" pointSize="30"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WuU-yH-4nW">
-                                <rect key="frame" x="16" y="31" width="46" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WuU-yH-4nW">
+                                <rect key="frame" x="36" y="31" width="30" height="41"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                 <state key="normal" title="⬅︎">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -264,7 +263,7 @@
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="0.70980392160000005" blue="0.5568627451" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.92549019610000005" green="0.27450980390000002" blue="0.18039215689999999" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="8in-Fi-Flf" firstAttribute="leading" secondItem="mvf-8O-4H9" secondAttribute="leadingMargin" id="2rr-GB-bmi"/>
                             <constraint firstItem="9UX-c5-e6y" firstAttribute="top" secondItem="mvf-8O-4H9" secondAttribute="top" constant="102" id="9Fh-eO-8Mp"/>
@@ -285,7 +284,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ewa-q2-vgT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2275" y="56"/>
+            <point key="canvasLocation" x="2762" y="77"/>
         </scene>
         <!--Display RecipeVC-->
         <scene sceneID="fwf-As-0sK">
@@ -304,22 +303,22 @@
                                 <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </webView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="RecipeName" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GZC-QG-Ltu">
-                                <rect key="frame" x="56" y="28" width="338" height="37"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                                <nil key="textColor"/>
+                                <rect key="frame" x="38" y="28" width="338" height="37"/>
+                                <fontDescription key="fontDescription" name="StackyardPERSONALUSE" family="Stackyard PERSONAL USE" pointSize="30"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.92549019610000005" green="0.27450980390000002" blue="0.18039215689999999" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="ebF-Gh-pGc" secondAttribute="trailing" id="Amz-n0-qBM"/>
                             <constraint firstItem="Hhh-at-jGn" firstAttribute="top" secondItem="ebF-Gh-pGc" secondAttribute="bottom" id="ImR-gW-yVF"/>
                             <constraint firstItem="ebF-Gh-pGc" firstAttribute="top" secondItem="EpP-Xq-l73" secondAttribute="top" constant="89" id="LX6-0C-7xl"/>
-                            <constraint firstItem="GZC-QG-Ltu" firstAttribute="leading" secondItem="EpP-Xq-l73" secondAttribute="leadingMargin" constant="36" id="YSS-DK-Iv1"/>
+                            <constraint firstItem="GZC-QG-Ltu" firstAttribute="leading" secondItem="EpP-Xq-l73" secondAttribute="leadingMargin" constant="18" id="YSS-DK-Iv1"/>
                             <constraint firstItem="ebF-Gh-pGc" firstAttribute="top" secondItem="GZC-QG-Ltu" secondAttribute="bottom" constant="24" id="b2u-a1-nmo"/>
                             <constraint firstItem="ebF-Gh-pGc" firstAttribute="leading" secondItem="EpP-Xq-l73" secondAttribute="leading" id="c5q-oC-PqV"/>
                             <constraint firstItem="GZC-QG-Ltu" firstAttribute="top" secondItem="djS-cn-a7W" secondAttribute="bottom" constant="8" symbolic="YES" id="dfl-WR-hPo"/>
-                            <constraint firstItem="GZC-QG-Ltu" firstAttribute="trailing" secondItem="EpP-Xq-l73" secondAttribute="trailingMargin" id="i23-z1-m3P"/>
+                            <constraint firstItem="GZC-QG-Ltu" firstAttribute="trailing" secondItem="EpP-Xq-l73" secondAttribute="trailingMargin" constant="-18" id="i23-z1-m3P"/>
                         </constraints>
                     </view>
                     <connections>
@@ -329,7 +328,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dQe-op-ytm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2879.7101449275365" y="36.684782608695656"/>
+            <point key="canvasLocation" x="3655" y="77"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
