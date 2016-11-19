@@ -22,6 +22,10 @@ class ViewController: UIViewController,ImagePickerDelegate {
     var conceptName = [String]()
     var conceptScore = [Float]()
     var finalOP = [ClarifaiOutput]()
+    
+    var isCameraShown = true
+    
+    var images = [UIImage]()
 
 //    @IBAction func cameraButton(_ sender: UIButton) {
 //        
@@ -32,61 +36,29 @@ class ViewController: UIViewController,ImagePickerDelegate {
 //    }
     
     func wrapperDidPress(_ imagePicker: ImagePickerController, images: [UIImage]) {
+        self.images = images
+        imagePicker.dismiss(animated: true, completion: nil)
+        //segue to the new Loading VC with the images and do the processing work there.
+        performSegue(withIdentifier: "extractLabels", sender: self)
+
         
     }
     func doneButtonDidPress(_ imagePicker: ImagePickerController, images: [UIImage]) {
-        imagePicker.dismiss(animated: true, completion: nil)
-        //loadingLabel.isHidden = false
-        let app = ClarifaiApp.init(appID: "VyvexuzVef1qsSuW_ZQyE6iUW_H1DKiWXMieAruL", appSecret: "3W8Y3AHV-26n6hbyYeJv_6uqM2vAOkpiEnN9QeFW")
-
-        app?.getModelByName("food-items-v1.0", completion: { (model, error) in
-            var clarifaiImgArray = [ClarifaiImage]() //initialise an array of clarifai images.
-            
-            for image in images {
-                let img = ClarifaiImage.init(image: image)
-                clarifaiImgArray.append(img!)
-            }
-            
-            print(clarifaiImgArray.count)
-            
-            if error != nil {
-                print("some error here.")
-                let alert = UIAlertController(title: "Error", message: error?.localizedDescription, preferredStyle: UIAlertControllerStyle.alert)
-                alert.addAction(UIAlertAction(title: "Ok.", style: UIAlertActionStyle.default, handler: nil))
-                self.present(alert, animated: true, completion: nil)
-            }
-            else {
-                model?.predict(on: clarifaiImgArray, completion: { (output, error) in
-                    if error != nil {
-                        print("some error in the output \(error)")
-                        let alert = UIAlertController(title: "Error", message: error?.localizedDescription, preferredStyle: UIAlertControllerStyle.alert)
-                        alert.addAction(UIAlertAction(title: "Ok.", style: UIAlertActionStyle.default, handler: nil))
-                        self.present(alert, animated: true, completion: nil)
-                        
-                    } else {
-                        self.finalOP = output!
-//                        for op in output! {
-//                            print("Input ID: \(op.input.inputID)")
-//                        for concept in (op.concepts)! {
-////                            print(concept.conceptID)
-//                           // print(concept.conceptName)
-//                            //print(concept.score)
-//                        }
-//                        }
-                        
-
-                    }
-                    DispatchQueue.main.async {
-                        self.performSegue(withIdentifier: "showIngredients", sender: self)
-
-                    }
-
-                })
-            }
-        })
         
+        //loadingLabel.isHidden = false
+        
+        self.images = images
+        print(images)
+        print("Done button pressed.")
+        //imagePicker.dismiss(animated: true, completion: nil)
+        //segue to the new Loading VC with the images and do the processing work there. 
+        imagePicker.dismiss(animated: true, completion: nil)
+
+        performSegue(withIdentifier: "extractLabels", sender: self)
 
     }
+    
+    
     func cancelButtonDidPress(_ imagePicker: ImagePickerController) {
         
     }
@@ -105,17 +77,24 @@ class ViewController: UIViewController,ImagePickerDelegate {
     
     override func viewDidAppear(_ animated: Bool) {
         
+        if isCameraShown == true {
         let imagePickerController = ImagePickerController()
         imagePickerController.delegate = self
         //imagePickerController.modalPresentationStyle = UIModalPresentationStyle.fullScreen
         
         present(imagePickerController, animated: true, completion: nil)
+        isCameraShown = false
+        }
+        
+        if isCameraShown == false {
+            performSegue(withIdentifier: "extractLabels", sender: self)
+        }
 
     }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "showIngredients" {
-            let vc = segue.destination as! IngredientsVC
-            vc.pred = finalOP
+        if segue.identifier == "extractLabels" {
+            let vc = segue.destination as! ExtractLabelsVC
+            vc.images = images
         }
     }
     

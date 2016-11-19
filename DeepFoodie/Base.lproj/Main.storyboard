@@ -23,12 +23,45 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                     </view>
                     <connections>
-                        <segue destination="Tet-gi-UPT" kind="show" identifier="showIngredients" id="sMJ-02-fcs"/>
+                        <segue destination="aLG-hg-sSS" kind="show" identifier="extractLabels" id="CN4-J1-urq"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="31.875" y="37.5"/>
+            <point key="canvasLocation" x="-529" y="57"/>
+        </scene>
+        <!--Extract LabelsVC-->
+        <scene sceneID="DpV-MN-Tzt">
+            <objects>
+                <viewController id="aLG-hg-sSS" customClass="ExtractLabelsVC" customModule="DeepFoodie" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Wcs-zd-THb"/>
+                        <viewControllerLayoutGuide type="bottom" id="qtm-YQ-WpJ"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="NFD-sR-Tp2">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Extracting Labels" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="q96-G0-LsJ">
+                                <rect key="frame" x="141" y="358" width="132" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.92549019607843142" green="0.27450980392156865" blue="0.1803921568627451" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="q96-G0-LsJ" firstAttribute="centerY" secondItem="NFD-sR-Tp2" secondAttribute="centerY" id="41U-51-Fci"/>
+                            <constraint firstItem="q96-G0-LsJ" firstAttribute="centerX" secondItem="NFD-sR-Tp2" secondAttribute="centerX" id="pvx-8y-xlx"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <segue destination="Tet-gi-UPT" kind="show" identifier="showIngredients" id="mzW-pP-oi3"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xb4-xK-kX4" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="343" y="56"/>
         </scene>
         <!--IngredientsVC-->
         <scene sceneID="gGL-p4-kBE">
@@ -63,7 +96,7 @@
                                 </connections>
                             </tableView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your Ingredients" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bZN-7a-N3a">
-                                <rect key="frame" x="20" y="19" width="374" height="38"/>
+                                <rect key="frame" x="20" y="18" width="374" height="39"/>
                                 <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="28"/>
                                 <color key="textColor" red="0.24313725489999999" green="0.1215686275" blue="0.42745098040000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
@@ -82,9 +115,6 @@
                                 <state key="normal" title="⬅︎">
                                     <color key="titleColor" red="0.1058823529" green="0.1058823529" blue="0.1058823529" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
-                                <connections>
-                                    <segue destination="BYZ-38-t0r" kind="show" id="IgJ-FQ-g1K"/>
-                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="0.70980392160000005" blue="0.5568627451" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -110,7 +140,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6CZ-Tc-PqP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="993" y="37"/>
+            <point key="canvasLocation" x="1230" y="56"/>
         </scene>
         <!--RecipesVC-->
         <scene sceneID="vsJ-do-9UK">
@@ -244,6 +274,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="sMJ-02-fcs"/>
+        <segue reference="mzW-pP-oi3"/>
     </inferredMetricsTieBreakers>
 </document>
