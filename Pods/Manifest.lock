@@ -24,6 +24,9 @@ PODS:
   - Clarifai (2.0.2):
     - AFNetworking (~> 2.0)
   - ImagePicker (2.0.0)
+  - Material (2.3.1):
+    - Material/Core (= 2.3.1)
+  - Material/Core (2.3.1)
   - Spring (1.0.3)
   - SwiftyJSON (3.1.1)
 
@@ -31,6 +34,7 @@ DEPENDENCIES:
   - Alamofire (~> 4.0)
   - Clarifai
   - ImagePicker
+  - Material (~> 2.0)
   - Spring (from `https://github.com/MengTo/Spring.git`, branch `swift3`)
   - SwiftyJSON
 
@@ -49,9 +53,10 @@ SPEC CHECKSUMS:
   Alamofire: 7682d43245de14874acd142ec137b144aa1dd335
   Clarifai: 3eb8ff03d581887c3e60eb797658ebd7efea6e75
   ImagePicker: 81175d36c2852cb543cb4f5d6c19e28f3e8d90eb
+  Material: 8532fe2dfbd20aa9375fbc9706fdc585c23e5ff0
   Spring: 3f02b5dc3308572ef177b3cad0fa7bbc4b0706f7
   SwiftyJSON: f0be2e604f83e8405a624e9f891898bf6ed4e019
 
-PODFILE CHECKSUM: ee99b73b5830ada647721d30f547e2ee9e77b4b4
+PODFILE CHECKSUM: 071c0189faabb391df13ea5d6ab973e775ce29d0
 
 COCOAPODS: 1.0.1
