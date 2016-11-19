@@ -57,6 +57,7 @@
 		304EAD431DCFBAE200165530 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3081086E1DD7AB77001526AC /* RecipesVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RecipesVC.swift; path = ../RecipesVC.swift; sourceTree = "<group>"; };
 		30AE7D251DD0B75600132700 /* IngredientsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = IngredientsVC.swift; path = ../IngredientsVC.swift; sourceTree = "<group>"; };
+		30BE36431DE039D000A909C9 /* Stackyard_PERSONAL_USE.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Stackyard_PERSONAL_USE.ttf; sourceTree = "<group>"; };
 		64BFFF7B0F85CBBE9041E525 /* Pods_DeepFoodieTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DeepFoodieTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6B4F8E232C723686DA34811F /* Pods-DeepFoodieUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DeepFoodieUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-DeepFoodieUITests/Pods-DeepFoodieUITests.release.xcconfig"; sourceTree = "<group>"; };
 		7BFA50B4ACEEA4CB81B0D4BE /* Pods-DeepFoodie.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DeepFoodie.release.xcconfig"; path = "Pods/Target Support Files/Pods-DeepFoodie/Pods-DeepFoodie.release.xcconfig"; sourceTree = "<group>"; };
@@ -138,6 +139,7 @@
 				304EAD251DCFBAE100165530 /* Main.storyboard */,
 				304EAD281DCFBAE100165530 /* Assets.xcassets */,
 				304EAD2A1DCFBAE100165530 /* LaunchScreen.storyboard */,
+				30BE36431DE039D000A909C9 /* Stackyard_PERSONAL_USE.ttf */,
 				304EAD2D1DCFBAE100165530 /* Info.plist */,
 			);
 			path = DeepFoodie;
