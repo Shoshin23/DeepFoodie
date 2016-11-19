@@ -21,53 +21,8 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Take photos of ingredients and I'll show you relevant recipes you can make. " textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="6" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Xu-YV-dfB">
-                                <rect key="frame" x="47" y="298" width="320" height="102"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="102" id="776-ZP-ByZ"/>
-                                    <constraint firstAttribute="height" constant="102" id="Z1i-37-Chq"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="Avenir-Black" family="Avenir" pointSize="18"/>
-                                <color key="textColor" red="0.24313725490196078" green="0.12156862745098039" blue="0.42745098039215684" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yvR-BJ-jTc">
-                                <rect key="frame" x="157" y="190" width="100" height="100"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="100" id="aXk-bW-RJM"/>
-                                    <constraint firstAttribute="height" constant="100" id="jvI-wC-iro"/>
-                                </constraints>
-                                <state key="normal" title="Camera" image="camera-upload"/>
-                                <connections>
-                                    <action selector="cameraButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="C9R-iC-OxB"/>
-                                </connections>
-                            </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Extracting Labels...hold on" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G9O-p9-JPO">
-                                <rect key="frame" x="39" y="622" width="336" height="54"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="54" id="8V7-qx-dRJ"/>
-                                    <constraint firstAttribute="height" constant="54" id="eYb-3Z-4Uk"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="19"/>
-                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
-                        <color key="backgroundColor" red="1" green="0.70980392156862748" blue="0.55686274509803924" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <constraints>
-                            <constraint firstItem="yvR-BJ-jTc" firstAttribute="centerX" secondItem="8Xu-YV-dfB" secondAttribute="centerX" id="2bf-J9-UQ2"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="G9O-p9-JPO" secondAttribute="bottom" constant="60" id="3L3-WK-2tp"/>
-                            <constraint firstItem="8Xu-YV-dfB" firstAttribute="top" secondItem="yvR-BJ-jTc" secondAttribute="bottom" constant="8" symbolic="YES" id="NkL-wK-YD5"/>
-                            <constraint firstItem="yvR-BJ-jTc" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Sli-AZ-Joq"/>
-                            <constraint firstItem="yvR-BJ-jTc" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="170" id="c5i-kM-RTH"/>
-                            <constraint firstItem="G9O-p9-JPO" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="19" id="dmT-qH-god"/>
-                            <constraint firstItem="8Xu-YV-dfB" firstAttribute="centerX" secondItem="G9O-p9-JPO" secondAttribute="centerX" id="n8e-pL-hfm"/>
-                            <constraint firstItem="8Xu-YV-dfB" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="27" id="ze0-xm-MN7"/>
-                        </constraints>
                     </view>
                     <connections>
-                        <outlet property="loadingLabel" destination="G9O-p9-JPO" id="fgy-6m-nzM"/>
                         <segue destination="Tet-gi-UPT" kind="show" identifier="showIngredients" id="sMJ-02-fcs"/>
                     </connections>
                 </viewController>
@@ -177,18 +132,18 @@
                                         <rect key="frame" x="0.0" y="28" width="414" height="72"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="LJi-uv-UAM" id="GDp-Ye-nvI">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="71.666666666666671"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="71"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="BNP-Uu-Mvl">
-                                                    <rect key="frame" x="15" y="19" width="33.333333333333336" height="20.333333333333332"/>
+                                                    <rect key="frame" x="15" y="18" width="34" height="21"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Subtitle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="X2j-Q7-9d3">
-                                                    <rect key="frame" x="14.999999999999996" y="39.333333333333329" width="43.666666666666664" height="14.333333333333334"/>
+                                                    <rect key="frame" x="15" y="39" width="44" height="15"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                     <nil key="textColor"/>
@@ -288,10 +243,7 @@
             <point key="canvasLocation" x="2879.7101449275365" y="36.684782608695656"/>
         </scene>
     </scenes>
-    <resources>
-        <image name="camera-upload" width="700" height="700"/>
-    </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="g8D-nE-S2n"/>
+        <segue reference="sMJ-02-fcs"/>
     </inferredMetricsTieBreakers>
 </document>

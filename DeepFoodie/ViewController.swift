@@ -16,30 +16,27 @@ class ViewController: UIViewController,ImagePickerDelegate {
     
     
 
-    @IBOutlet weak var loadingLabel: UILabel!
+    //@IBOutlet weak var loadingLabel: UILabel!
     
     var pred = [String:[String:Float]]()
     var conceptName = [String]()
     var conceptScore = [Float]()
     var finalOP = [ClarifaiOutput]()
 
-    @IBAction func cameraButton(_ sender: UIButton) {
-        
-       // var app = ClarifaiApp.init(appID: "VyvexuzVef1qsSuW_ZQyE6iUW_H1DKiWXMieAruL", appSecret: "3W8Y3AHV-26n6hbyYeJv_6uqM2vAOkpiEnN9QeFW")
-        
-        let imagePickerController = ImagePickerController()
-        imagePickerController.delegate = self
-        present(imagePickerController, animated: true, completion: nil)
-
-        
-    }
+//    @IBAction func cameraButton(_ sender: UIButton) {
+//        
+//       // var app = ClarifaiApp.init(appID: "VyvexuzVef1qsSuW_ZQyE6iUW_H1DKiWXMieAruL", appSecret: "3W8Y3AHV-26n6hbyYeJv_6uqM2vAOkpiEnN9QeFW")
+//        
+//        
+//        
+//    }
     
     func wrapperDidPress(_ imagePicker: ImagePickerController, images: [UIImage]) {
         
     }
     func doneButtonDidPress(_ imagePicker: ImagePickerController, images: [UIImage]) {
         imagePicker.dismiss(animated: true, completion: nil)
-        loadingLabel.isHidden = false
+        //loadingLabel.isHidden = false
         let app = ClarifaiApp.init(appID: "VyvexuzVef1qsSuW_ZQyE6iUW_H1DKiWXMieAruL", appSecret: "3W8Y3AHV-26n6hbyYeJv_6uqM2vAOkpiEnN9QeFW")
 
         app?.getModelByName("food-items-v1.0", completion: { (model, error) in
@@ -98,12 +95,23 @@ class ViewController: UIViewController,ImagePickerDelegate {
         // Do any additional setup after loading the view, typically from a nib.
         
         //hide the extracting labels label.
-        loadingLabel.isHidden = true
+        //loadingLabel.isHidden = true
+        
+        
         
         
         
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        
+        let imagePickerController = ImagePickerController()
+        imagePickerController.delegate = self
+        //imagePickerController.modalPresentationStyle = UIModalPresentationStyle.fullScreen
+        
+        present(imagePickerController, animated: true, completion: nil)
+
+    }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "showIngredients" {
             let vc = segue.destination as! IngredientsVC

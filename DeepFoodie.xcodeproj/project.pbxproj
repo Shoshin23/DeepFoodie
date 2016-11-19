@@ -18,6 +18,7 @@
 		304EAD421DCFBAE200165530 /* DeepFoodieUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 304EAD411DCFBAE200165530 /* DeepFoodieUITests.swift */; };
 		3081086F1DD7AB77001526AC /* RecipesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3081086E1DD7AB77001526AC /* RecipesVC.swift */; };
 		30AE7D261DD0B75600132700 /* IngredientsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30AE7D251DD0B75600132700 /* IngredientsVC.swift */; };
+		30BE36441DE03FD700A909C9 /* Stackyard_PERSONAL_USE.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 30BE36431DE039D000A909C9 /* Stackyard_PERSONAL_USE.ttf */; };
 		58875117216FFF27EDD3BE54 /* Pods_DeepFoodie.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C988F505CA2AF66CB0F6463D /* Pods_DeepFoodie.framework */; };
 		A58B882C12E73A3373AFF743 /* Pods_DeepFoodieTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 64BFFF7B0F85CBBE9041E525 /* Pods_DeepFoodieTests.framework */; };
 /* End PBXBuildFile section */
@@ -297,6 +298,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				30BE36441DE03FD700A909C9 /* Stackyard_PERSONAL_USE.ttf in Resources */,
 				304EAD2C1DCFBAE100165530 /* LaunchScreen.storyboard in Resources */,
 				304EAD291DCFBAE100165530 /* Assets.xcassets in Resources */,
 				304EAD271DCFBAE100165530 /* Main.storyboard in Resources */,
