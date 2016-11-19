@@ -24,21 +24,34 @@ PODS:
   - Clarifai (2.0.2):
     - AFNetworking (~> 2.0)
   - ImagePicker (2.0.0)
+  - Spring (1.0.3)
   - SwiftyJSON (3.1.1)
 
 DEPENDENCIES:
   - Alamofire (~> 4.0)
   - Clarifai
   - ImagePicker
+  - Spring (from `https://github.com/MengTo/Spring.git`, branch `swift3`)
   - SwiftyJSON
+
+EXTERNAL SOURCES:
+  Spring:
+    :branch: swift3
+    :git: https://github.com/MengTo/Spring.git
+
+CHECKOUT OPTIONS:
+  Spring:
+    :commit: 3a9227c6e9157e7b47f5ac1ee5abab2a56b50002
+    :git: https://github.com/MengTo/Spring.git
 
 SPEC CHECKSUMS:
   AFNetworking: cb8d14a848e831097108418f5d49217339d4eb60
   Alamofire: 7682d43245de14874acd142ec137b144aa1dd335
   Clarifai: 3eb8ff03d581887c3e60eb797658ebd7efea6e75
   ImagePicker: 81175d36c2852cb543cb4f5d6c19e28f3e8d90eb
+  Spring: 3f02b5dc3308572ef177b3cad0fa7bbc4b0706f7
   SwiftyJSON: f0be2e604f83e8405a624e9f891898bf6ed4e019
 
-PODFILE CHECKSUM: 53b098e39990dea256fb0a3e8aa0cd3908d05b46
+PODFILE CHECKSUM: ee99b73b5830ada647721d30f547e2ee9e77b4b4
 
 COCOAPODS: 1.0.1

@@ -10,10 +10,14 @@ import UIKit
 import Clarifai
 import Alamofire
 import SwiftyJSON
+import Spring
 
 class IngredientsVC: UIViewController,UITableViewDelegate,UITableViewDataSource {
     
     @IBOutlet weak var tableView: UITableView!
+    
+    @IBOutlet weak var topLabel: SpringLabel!
+    
     var proper_pred = [String:Array<String>]() //get the goddamn float!
     let taboo_words = ["vegetable","juice","citrus","sweet","pasture"] //words that just dont convey any meaning. Are too generic.
     var recipes_JSON:JSON! = nil
@@ -21,11 +25,20 @@ class IngredientsVC: UIViewController,UITableViewDelegate,UITableViewDataSource 
     var ingredients = [String?]()
     
     var pred = [ClarifaiOutput]()
+    
+    override func viewDidAppear(_ animated: Bool) {
+        topLabel.isHidden = false
+        topLabel.animation = "fadeIn"
+        topLabel.curve = "easeIn"
+        topLabel.force = 2.3
+        topLabel.duration = 3.0
+        topLabel.animate()
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
+       
         
-      
-
+        
         // Do any additional setup after loading the view.
         var conceptName = [String]()
         for op in pred {
@@ -64,6 +77,7 @@ class IngredientsVC: UIViewController,UITableViewDelegate,UITableViewDataSource 
         var pred = Array(self.proper_pred.values)[indexPath.row]
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as UITableViewCell
         
+        cell.textLabel?.textColor = UIColor.white //change it to white.
         
         for word in taboo_words {
             if let index = pred.index(of: word) {
@@ -76,11 +90,6 @@ class IngredientsVC: UIViewController,UITableViewDelegate,UITableViewDataSource 
         
     }
     
-    
-    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-        
-        cell.textLabel?.font = UIFont(name: "Avenir", size: 18.0)
-    }
     
 //    func getRecipes(ingredients:[String]) {
 //       

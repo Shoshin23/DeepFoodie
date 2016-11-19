@@ -8,6 +8,7 @@ target 'DeepFoodie' do
   pod 'ImagePicker'
   pod 'Alamofire', '~> 4.0'
   pod 'SwiftyJSON'
+  pod 'Spring', :git => 'https://github.com/MengTo/Spring.git', :branch => 'swift3'
 
   # Pods for DeepFoodie
 
