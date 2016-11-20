@@ -69,7 +69,8 @@ class ViewController: UIViewController,ImagePickerDelegate {
         //hide the extracting labels label.
         //loadingLabel.isHidden = true
         
-        
+        UserDefaults.standard.removeObject(forKey: "recipesjson")
+        print("Cleared all NSUSERDEFAULTS")
         
         
         

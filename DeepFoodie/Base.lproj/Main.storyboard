@@ -351,12 +351,24 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CIs-CX-M6P">
+                                <rect key="frame" x="5" y="27" width="30" height="41"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <state key="normal" title="⬅︎">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <segue destination="MU2-RN-hDE" kind="show" id="irR-hA-LHP"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.92549019610000005" green="0.27450980390000002" blue="0.18039215689999999" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
+                            <constraint firstItem="CIs-CX-M6P" firstAttribute="top" secondItem="djS-cn-a7W" secondAttribute="bottom" constant="7" id="9Gi-QE-GsW"/>
                             <constraint firstAttribute="trailing" secondItem="ebF-Gh-pGc" secondAttribute="trailing" id="Amz-n0-qBM"/>
                             <constraint firstItem="Hhh-at-jGn" firstAttribute="top" secondItem="ebF-Gh-pGc" secondAttribute="bottom" id="ImR-gW-yVF"/>
                             <constraint firstItem="ebF-Gh-pGc" firstAttribute="top" secondItem="EpP-Xq-l73" secondAttribute="top" constant="89" id="LX6-0C-7xl"/>
+                            <constraint firstItem="GZC-QG-Ltu" firstAttribute="leading" secondItem="CIs-CX-M6P" secondAttribute="trailing" constant="-1" id="MZu-C3-OLy"/>
                             <constraint firstItem="GZC-QG-Ltu" firstAttribute="leading" secondItem="EpP-Xq-l73" secondAttribute="leadingMargin" constant="18" id="YSS-DK-Iv1"/>
                             <constraint firstItem="ebF-Gh-pGc" firstAttribute="top" secondItem="GZC-QG-Ltu" secondAttribute="bottom" constant="24" id="b2u-a1-nmo"/>
                             <constraint firstItem="ebF-Gh-pGc" firstAttribute="leading" secondItem="EpP-Xq-l73" secondAttribute="leading" id="c5q-oC-PqV"/>
@@ -375,6 +387,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="mzW-pP-oi3"/>
+        <segue reference="ztC-2M-s1c"/>
+        <segue reference="irR-hA-LHP"/>
     </inferredMetricsTieBreakers>
 </document>

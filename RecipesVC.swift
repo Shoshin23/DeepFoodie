@@ -18,15 +18,46 @@ class RecipesVC: UIViewController,UITableViewDataSource,UITableViewDelegate {
     var chosenLabel = String()
     
     var RecipesJSON:JSON!
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        
+        
+
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         
+        //save RecipesJSON to NSUserdefaults. Keep it here so it can be read the 2nd time around. 
+        if(UserDefaults.standard.value(forKey: "recipesjson") != nil) { //something's already there.
+            //RecipesJSON = JSON(UserDefaults.standard.value(forKey: "recipesjson")!)
+            //print(RecipesJSON)
+            RecipesJSON = JSON(data:UserDefaults.standard.value(forKey: "recipesjson") as! Data)
+        }
+        
+        if(UserDefaults.standard.value(forKey: "recipesjson") == nil) { //something's already there.
+            do {  let rawRecipesJSON = try RecipesJSON.rawData()
+            
+            UserDefaults.standard.set(rawRecipesJSON, forKey: "recipesjson")
+            } catch {
+                print(error)
+            }
+            
+            
+            
+//            UserDefaults.standard.set(RecipesJSON["hits"].stringValue as String, forKey: "recipesjson")
+//            RecipesJSON = RecipesJSON["hits"]
+            
+        }
+        
         if let resData = RecipesJSON["hits"].arrayObject {
             self.arrRes = resData as! [[String:AnyObject]]
+            //UserDefaults.standard.set(RecipesJSON, forKey: "recipesjson")
             //print(arrRes) //just to see how this horrendous thing looks.
         }
+       
 //        if self.arrRes.count > 0 {
 //            self.recipesTableView.reloadData()
 //        }

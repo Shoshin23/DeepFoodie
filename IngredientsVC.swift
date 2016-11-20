@@ -47,11 +47,11 @@ class IngredientsVC: UIViewController,UITableViewDelegate,UITableViewDataSource 
     
     override func viewWillAppear(_ animated: Bool) {
         animateTable()
-        print(pred)
-        print(proper_pred)
-        print(ingredients)
-        print(editedIngredient)
-        self.tableView.reloadData()
+//        print(pred)
+//        print(proper_pred)
+//        print(ingredients)
+//        print(editedIngredient)
+//        self.tableView.reloadData()
     }
     
     func animateTable() {
@@ -102,7 +102,7 @@ class IngredientsVC: UIViewController,UITableViewDelegate,UITableViewDataSource 
         
         
         
-        //print("Proper_Pred: \(proper_pred)")
+        print("Proper_Pred: \(proper_pred)")
         
         
 
@@ -153,6 +153,8 @@ class IngredientsVC: UIViewController,UITableViewDelegate,UITableViewDataSource 
             
             if((resData.result.value) != nil) {
                 self.recipes_JSON = JSON(resData.result.value!)
+                //UserDefaults.standard.set(self.recipes_JSON, forKey: "recipesjson")
+
                 
             }
             
@@ -170,7 +172,7 @@ class IngredientsVC: UIViewController,UITableViewDelegate,UITableViewDataSource 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         editIngredients = Array(self.proper_pred.values)[indexPath.row]
         print(editIngredients)
-        performSegue(withIdentifier: "editIngredients", sender: self)
+        //performSegue(withIdentifier: "editIngredients", sender: self)
 
     }
     
