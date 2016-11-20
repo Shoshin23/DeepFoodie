@@ -8,6 +8,8 @@
 
 import UIKit
 import Clarifai
+import ALThreeCircleSpinner
+
 
 class ExtractLabelsVC: UIViewController {
     
@@ -18,8 +20,13 @@ class ExtractLabelsVC: UIViewController {
     var conceptScore = [Float]()
     var finalOP = [ClarifaiOutput]()
 
+
     override func viewDidLoad() {
         super.viewDidLoad()
+        let spinner = ALThreeCircleSpinner(frame: CGRect(x:(self.view.frame.size.width/2-25), y:(self.view.frame.size.height/2-50), width:44, height:44))
+
+        spinner.tintColor = UIColor.black
+        self.view.addSubview(spinner)
 
         // Do any additional setup after loading the view.
         

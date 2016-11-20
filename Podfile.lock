@@ -21,6 +21,7 @@ PODS:
     - AFNetworking/NSURLConnection
     - AFNetworking/NSURLSession
   - Alamofire (4.0.1)
+  - ALThreeCircleSpinner (1.0.4)
   - Clarifai (2.0.2):
     - AFNetworking (~> 2.0)
   - ImagePicker (2.0.0)
@@ -32,6 +33,7 @@ PODS:
 
 DEPENDENCIES:
   - Alamofire (~> 4.0)
+  - ALThreeCircleSpinner
   - Clarifai
   - ImagePicker
   - Material (~> 2.0)
@@ -51,12 +53,13 @@ CHECKOUT OPTIONS:
 SPEC CHECKSUMS:
   AFNetworking: cb8d14a848e831097108418f5d49217339d4eb60
   Alamofire: 7682d43245de14874acd142ec137b144aa1dd335
+  ALThreeCircleSpinner: a87b9c3511e5fea8509923a17d6f38b11a9b1f5f
   Clarifai: 3eb8ff03d581887c3e60eb797658ebd7efea6e75
   ImagePicker: 81175d36c2852cb543cb4f5d6c19e28f3e8d90eb
   Material: 8532fe2dfbd20aa9375fbc9706fdc585c23e5ff0
   Spring: 3f02b5dc3308572ef177b3cad0fa7bbc4b0706f7
   SwiftyJSON: f0be2e604f83e8405a624e9f891898bf6ed4e019
 
-PODFILE CHECKSUM: 071c0189faabb391df13ea5d6ab973e775ce29d0
+PODFILE CHECKSUM: 707ebd31b623e277f248a8eca68cd7b78bb547a5
 
 COCOAPODS: 1.0.1

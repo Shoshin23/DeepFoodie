@@ -10,7 +10,7 @@ target 'DeepFoodie' do
   pod 'SwiftyJSON'
   pod 'Spring', :git => 'https://github.com/MengTo/Spring.git', :branch => 'swift3'
   pod 'Material', '~> 2.0'
-
+  pod 'ALThreeCircleSpinner'
   # Pods for DeepFoodie
 
   target 'DeepFoodieTests' do

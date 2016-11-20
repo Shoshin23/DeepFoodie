@@ -205,7 +205,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="72" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="KAt-Wh-Xqt">
-                                <rect key="frame" x="0.0" y="62" width="414" height="558"/>
+                                <rect key="frame" x="0.0" y="62" width="414" height="601"/>
                                 <color key="backgroundColor" red="0.92549019610000005" green="0.27450980390000002" blue="0.18039215689999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" textLabel="rf0-xd-WOS" rowHeight="72" style="IBUITableViewCellStyleDefault" id="QHF-Wq-1cE">
@@ -240,14 +240,17 @@
                             <constraint firstItem="KAt-Wh-Xqt" firstAttribute="leading" secondItem="T8U-aG-51G" secondAttribute="leading" id="TZy-QA-iKt"/>
                             <constraint firstItem="m4d-07-laC" firstAttribute="top" secondItem="mct-qb-ofR" secondAttribute="bottom" constant="8" symbolic="YES" id="fHb-FN-u7g"/>
                             <constraint firstItem="m4d-07-laC" firstAttribute="trailing" secondItem="T8U-aG-51G" secondAttribute="trailingMargin" id="heq-8K-9VO"/>
-                            <constraint firstItem="LLP-f3-X9k" firstAttribute="top" secondItem="KAt-Wh-Xqt" secondAttribute="bottom" constant="116" id="jmN-GP-67A"/>
+                            <constraint firstItem="LLP-f3-X9k" firstAttribute="top" secondItem="KAt-Wh-Xqt" secondAttribute="bottom" constant="73" id="jmN-GP-67A"/>
                             <constraint firstItem="KAt-Wh-Xqt" firstAttribute="top" secondItem="m4d-07-laC" secondAttribute="bottom" constant="1" id="ooY-ii-HoH"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <segue destination="Tet-gi-UPT" kind="show" identifier="newIngredients" id="ztC-2M-s1c"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2tL-db-DDg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2105.7971014492755" y="-594.29347826086962"/>
+            <point key="canvasLocation" x="2022" y="-600"/>
         </scene>
         <!--RecipesVC-->
         <scene sceneID="vsJ-do-9UK">
@@ -371,4 +374,7 @@
             <point key="canvasLocation" x="3655" y="77"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="ztC-2M-s1c"/>
+    </inferredMetricsTieBreakers>
 </document>

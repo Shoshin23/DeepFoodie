@@ -19,7 +19,7 @@ class IngredientsVC: UIViewController,UITableViewDelegate,UITableViewDataSource 
     @IBOutlet weak var topLabel: SpringLabel!
     
     var proper_pred = [String:Array<String>]() //get the goddamn float!
-    let taboo_words = ["vegetable","juice","citrus","sweet","pasture"] //words that just dont convey any meaning. Are too generic.
+    let taboo_words = ["vegetable","juice","citrus","sweet","pasture","dairy","dairy product"] //words that just dont convey any meaning. Are too generic.
     var recipes_JSON:JSON! = nil
     
     var ingredients = [String?]()
@@ -28,6 +28,8 @@ class IngredientsVC: UIViewController,UITableViewDelegate,UITableViewDataSource 
     
     var editIngredients = [String]()
     
+    var editedIngredient = String()
+    
     override func viewDidAppear(_ animated: Bool) {
         topLabel.isHidden = false
         topLabel.animation = "fadeIn"
@@ -35,10 +37,21 @@ class IngredientsVC: UIViewController,UITableViewDelegate,UITableViewDataSource 
         topLabel.force = 2.3
         topLabel.duration = 3.0
         topLabel.animate()
+        
+//        print(pred)
+//        print(proper_pred)
+//        print(ingredients)
+//        print(editedIngredient)
+//        self.tableView.reloadData()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         animateTable()
+        print(pred)
+        print(proper_pred)
+        print(ingredients)
+        print(editedIngredient)
+        self.tableView.reloadData()
     }
     
     func animateTable() {
@@ -86,6 +99,9 @@ class IngredientsVC: UIViewController,UITableViewDelegate,UITableViewDataSource 
             proper_pred[op.input.inputID] = conceptName
             conceptName.removeAll()
         }
+        
+        
+        
         //print("Proper_Pred: \(proper_pred)")
         
         
@@ -120,19 +136,6 @@ class IngredientsVC: UIViewController,UITableViewDelegate,UITableViewDataSource 
         return cell
         
     }
-    
-//    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        
-//        
-//        
-//    }
-    
-    
-//    func getRecipes(ingredients:[String]) {
-//       
-//    }
-    
-
     
 
     @IBAction func getRecipeTapped(_ sender: UIButton) {

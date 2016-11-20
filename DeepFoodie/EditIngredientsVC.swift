@@ -11,6 +11,8 @@ import UIKit
 class EditIngredientsVC: UIViewController,UITableViewDelegate,UITableViewDataSource {
     
     var pred = [String]()
+    var selectedIngredient = String()
+    
 
 
     override func viewDidLoad() {
@@ -32,6 +34,19 @@ class EditIngredientsVC: UIViewController,UITableViewDelegate,UITableViewDataSou
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as UITableViewCell
         cell.textLabel?.text = ingredient
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        selectedIngredient = pred[indexPath.row]
+        performSegue(withIdentifier: "newIngredients", sender: self)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "newIngredients" {
+            let vc = segue.destination as! IngredientsVC
+            vc.editedIngredient = selectedIngredient
+            
+        }
     }
 
     override func didReceiveMemoryWarning() {
