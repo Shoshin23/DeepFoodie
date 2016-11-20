@@ -23,7 +23,7 @@ class ExtractLabelsVC: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        let spinner = ALThreeCircleSpinner(frame: CGRect(x:(self.view.frame.size.width/2-25), y:(self.view.frame.size.height/2-50), width:44, height:44))
+        let spinner = ALThreeCircleSpinner(frame: CGRect(x:(self.view.frame.size.width/2-25), y:(self.view.frame.size.height/2-50), width:60, height:60))
 
         spinner.tintColor = UIColor.black
         self.view.addSubview(spinner)
