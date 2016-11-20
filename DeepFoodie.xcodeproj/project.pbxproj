@@ -22,6 +22,7 @@
 		30FF91C81DE0B1BA009FD0DA /* Stackyard_PERSONAL_USE.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 30FF91C71DE0B1BA009FD0DA /* Stackyard_PERSONAL_USE.ttf */; };
 		30FF91C91DE0B1BA009FD0DA /* Stackyard_PERSONAL_USE.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 30FF91C71DE0B1BA009FD0DA /* Stackyard_PERSONAL_USE.ttf */; };
 		30FF91CA1DE0B1BA009FD0DA /* Stackyard_PERSONAL_USE.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 30FF91C71DE0B1BA009FD0DA /* Stackyard_PERSONAL_USE.ttf */; };
+		30FF91CC1DE0D44C009FD0DA /* EditIngredientsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30FF91CB1DE0D44B009FD0DA /* EditIngredientsVC.swift */; };
 		58875117216FFF27EDD3BE54 /* Pods_DeepFoodie.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C988F505CA2AF66CB0F6463D /* Pods_DeepFoodie.framework */; };
 		A58B882C12E73A3373AFF743 /* Pods_DeepFoodieTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 64BFFF7B0F85CBBE9041E525 /* Pods_DeepFoodieTests.framework */; };
 /* End PBXBuildFile section */
@@ -63,6 +64,7 @@
 		30AE7D251DD0B75600132700 /* IngredientsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = IngredientsVC.swift; path = ../IngredientsVC.swift; sourceTree = "<group>"; };
 		30BE36451DE049FE00A909C9 /* ExtractLabelsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ExtractLabelsVC.swift; path = ../ExtractLabelsVC.swift; sourceTree = "<group>"; };
 		30FF91C71DE0B1BA009FD0DA /* Stackyard_PERSONAL_USE.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Stackyard_PERSONAL_USE.ttf; sourceTree = "<group>"; };
+		30FF91CB1DE0D44B009FD0DA /* EditIngredientsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditIngredientsVC.swift; sourceTree = "<group>"; };
 		64BFFF7B0F85CBBE9041E525 /* Pods_DeepFoodieTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DeepFoodieTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6B4F8E232C723686DA34811F /* Pods-DeepFoodieUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DeepFoodieUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-DeepFoodieUITests/Pods-DeepFoodieUITests.release.xcconfig"; sourceTree = "<group>"; };
 		7BFA50B4ACEEA4CB81B0D4BE /* Pods-DeepFoodie.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DeepFoodie.release.xcconfig"; path = "Pods/Target Support Files/Pods-DeepFoodie/Pods-DeepFoodie.release.xcconfig"; sourceTree = "<group>"; };
@@ -140,6 +142,7 @@
 				304EAD231DCFBAE100165530 /* ViewController.swift */,
 				30BE36451DE049FE00A909C9 /* ExtractLabelsVC.swift */,
 				30AE7D251DD0B75600132700 /* IngredientsVC.swift */,
+				30FF91CB1DE0D44B009FD0DA /* EditIngredientsVC.swift */,
 				3081086E1DD7AB77001526AC /* RecipesVC.swift */,
 				3048B1D21DDCE85F0080A837 /* displayRecipeVC.swift */,
 				304EAD251DCFBAE100165530 /* Main.storyboard */,
@@ -458,6 +461,7 @@
 			files = (
 				304EAD241DCFBAE100165530 /* ViewController.swift in Sources */,
 				30BE36461DE049FE00A909C9 /* ExtractLabelsVC.swift in Sources */,
+				30FF91CC1DE0D44C009FD0DA /* EditIngredientsVC.swift in Sources */,
 				30AE7D261DD0B75600132700 /* IngredientsVC.swift in Sources */,
 				3048B1D31DDCE85F0080A837 /* displayRecipeVC.swift in Sources */,
 				3081086F1DD7AB77001526AC /* RecipesVC.swift in Sources */,

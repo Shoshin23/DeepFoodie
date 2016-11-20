@@ -26,6 +26,8 @@ class IngredientsVC: UIViewController,UITableViewDelegate,UITableViewDataSource 
     
     var pred = [ClarifaiOutput]()
     
+    var editIngredients = [String]()
+    
     override func viewDidAppear(_ animated: Bool) {
         topLabel.isHidden = false
         topLabel.animation = "fadeIn"
@@ -130,6 +132,7 @@ class IngredientsVC: UIViewController,UITableViewDelegate,UITableViewDataSource 
 //       
 //    }
     
+
     
 
     @IBAction func getRecipeTapped(_ sender: UIButton) {
@@ -160,7 +163,13 @@ class IngredientsVC: UIViewController,UITableViewDelegate,UITableViewDataSource 
             
         }
         }
-        
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        editIngredients = Array(self.proper_pred.values)[indexPath.row]
+        print(editIngredients)
+        performSegue(withIdentifier: "editIngredients", sender: self)
+
+    }
     
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -169,6 +178,12 @@ class IngredientsVC: UIViewController,UITableViewDelegate,UITableViewDataSource 
             if recipes_JSON != nil {
             vc.RecipesJSON = recipes_JSON
             }
+        }
+        
+        if segue.identifier == "editIngredients" {
+            let vc = segue.destination as! EditIngredientsVC
+            vc.pred = editIngredients
+            
         }
     }
     
