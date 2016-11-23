@@ -29,13 +29,14 @@ class IngredientsVC: UIViewController,UITableViewDelegate,UITableViewDataSource 
     var editIngredients = [String]()
     
     var editedIngredient = String()
+    var selectedIndex = Int()
     
     override func viewDidAppear(_ animated: Bool) {
         topLabel.isHidden = false
         topLabel.animation = "fadeIn"
         topLabel.curve = "easeIn"
         topLabel.force = 2.3
-        topLabel.duration = 3.0
+        topLabel.duration = 1.0
         topLabel.animate()
         
 //        print(pred)
@@ -103,8 +104,14 @@ class IngredientsVC: UIViewController,UITableViewDelegate,UITableViewDataSource 
         
         
         print("Proper_Pred: \(proper_pred)")
-        
-        
+//        if(UserDefaults.standard.value(forKey: "ingredients") != nil) {
+//            proper_pred = UserDefaults.standard.value(forKey: "ingredients") as! [String : Array<String>]
+//            self.tableView.reloadData()
+//        }
+//        
+//        if(UserDefaults.standard.value(forKey: "ingredients") == nil) {
+//            UserDefaults.standard.set(proper_pred, forKey: "ingredients")
+//        }
 
     }
 
@@ -122,6 +129,8 @@ class IngredientsVC: UIViewController,UITableViewDelegate,UITableViewDataSource 
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         var pred = Array(self.proper_pred.values)[indexPath.row]
+        
+        
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as UITableViewCell
         
         cell.textLabel?.textColor = UIColor.white //change it to white.
@@ -132,6 +141,10 @@ class IngredientsVC: UIViewController,UITableViewDelegate,UITableViewDataSource 
         }
         }
         ingredients.append(pred.first)
+        if(indexPath.row == selectedIndex) {
+            cell.textLabel?.text = editedIngredient
+        }
+
         cell.textLabel?.text = pred.first
         return cell
         
@@ -170,8 +183,9 @@ class IngredientsVC: UIViewController,UITableViewDelegate,UITableViewDataSource 
         }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        editIngredients = Array(self.proper_pred.values)[indexPath.row]
-        print(editIngredients)
+//        editIngredients = Array(self.proper_pred.values)[indexPath.row]
+//        selectedIndex = indexPath.row
+//        print(editIngredients)
         //performSegue(withIdentifier: "editIngredients", sender: self)
 
     }
@@ -188,6 +202,7 @@ class IngredientsVC: UIViewController,UITableViewDelegate,UITableViewDataSource 
         if segue.identifier == "editIngredients" {
             let vc = segue.destination as! EditIngredientsVC
             vc.pred = editIngredients
+            
             
         }
     }

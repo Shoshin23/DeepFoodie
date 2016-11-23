@@ -12,7 +12,7 @@ class EditIngredientsVC: UIViewController,UITableViewDelegate,UITableViewDataSou
     
     var pred = [String]()
     var selectedIngredient = String()
-    
+
 
 
     override func viewDidLoad() {

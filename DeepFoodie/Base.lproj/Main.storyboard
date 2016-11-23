@@ -48,7 +48,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Extracting Labels" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="q96-G0-LsJ">
-                                <rect key="frame" x="76" y="295.5" width="168.5" height="29"/>
+                                <rect key="frame" x="75.5" y="295.5" width="169" height="29"/>
                                 <fontDescription key="fontDescription" name="StackyardPERSONALUSE" family="Stackyard PERSONAL USE" pointSize="29"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
@@ -91,15 +91,15 @@
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </view>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="Cell" textLabel="e83-6o-9g7" rowHeight="79" style="IBUITableViewCellStyleDefault" id="Xg0-de-HsF">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" textLabel="e83-6o-9g7" rowHeight="79" style="IBUITableViewCellStyleDefault" id="Xg0-de-HsF">
                                         <rect key="frame" x="0.0" y="30" width="320" height="79"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Xg0-de-HsF" id="LYR-Zl-uCh">
-                                            <rect key="frame" x="0.0" y="0.0" width="287" height="78.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="78"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="e83-6o-9g7">
-                                                    <rect key="frame" x="15" y="0.0" width="270" height="78.5"/>
+                                                    <rect key="frame" x="15" y="0.0" width="290" height="78"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="27"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -255,7 +255,7 @@
         <!--RecipesVC-->
         <scene sceneID="vsJ-do-9UK">
             <objects>
-                <viewController id="MU2-RN-hDE" customClass="RecipesVC" customModule="DeepFoodie" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController wantsFullScreenLayout="YES" id="MU2-RN-hDE" customClass="RecipesVC" customModule="DeepFoodie" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="d0O-hY-fss"/>
                         <viewControllerLayoutGuide type="bottom" id="KWm-aH-gvu"/>
@@ -265,18 +265,18 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="72" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="9UX-c5-e6y">
-                                <rect key="frame" x="0.0" y="102" width="320" height="466"/>
+                                <rect key="frame" x="0.0" y="102" width="320" height="410"/>
                                 <color key="backgroundColor" red="0.92549019610000005" green="0.27450980390000002" blue="0.18039215689999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="Cell" textLabel="BNP-Uu-Mvl" rowHeight="72" style="IBUITableViewCellStyleDefault" id="LJi-uv-UAM">
                                         <rect key="frame" x="0.0" y="28" width="320" height="72"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="LJi-uv-UAM" id="GDp-Ye-nvI">
-                                            <rect key="frame" x="0.0" y="0.0" width="287" height="71.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="287" height="71"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="BNP-Uu-Mvl">
-                                                    <rect key="frame" x="15" y="0.0" width="270" height="71.5"/>
+                                                    <rect key="frame" x="15" y="0.0" width="270" height="71"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="18"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -298,23 +298,48 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WuU-yH-4nW">
-                                <rect key="frame" x="32" y="31" width="30" height="41"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
-                                <state key="normal" title="⬅︎">
-                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="B70-TG-7nN" customClass="FlatButton" customModule="Material">
+                                <rect key="frame" x="72" y="519" width="177" height="41"/>
+                                <fontDescription key="fontDescription" name="StackyardPERSONALUSE" family="Stackyard PERSONAL USE" pointSize="29"/>
+                                <state key="normal" title="Start over.">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="title" value="Start over."/>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
+                                        <color key="value" red="0.89956390539999997" green="0.89956390539999997" blue="0.89956390539999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="pulseColor">
+                                        <color key="value" red="0.89956390539999997" green="0.89956390539999997" blue="0.89956390539999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="pulseOpacity">
+                                        <real key="value" value="3"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="13"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="titleColor">
+                                        <color key="value" red="0.92549019610000005" green="0.27450980390000002" blue="0.18039215689999999" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="backgroundColor">
+                                        <color key="value" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <segue destination="BYZ-38-t0r" kind="show" id="Hcj-OP-PJy"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="0.92549019610000005" green="0.27450980390000002" blue="0.18039215689999999" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="8in-Fi-Flf" firstAttribute="leading" secondItem="mvf-8O-4H9" secondAttribute="leadingMargin" id="2rr-GB-bmi"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="B70-TG-7nN" secondAttribute="trailing" constant="55" id="3TW-or-Ddu"/>
                             <constraint firstItem="9UX-c5-e6y" firstAttribute="top" secondItem="mvf-8O-4H9" secondAttribute="top" constant="102" id="9Fh-eO-8Mp"/>
-                            <constraint firstItem="WuU-yH-4nW" firstAttribute="top" secondItem="d0O-hY-fss" secondAttribute="bottom" constant="11" id="Oxv-Tf-pTj"/>
+                            <constraint firstItem="B70-TG-7nN" firstAttribute="leading" secondItem="mvf-8O-4H9" secondAttribute="leadingMargin" constant="56" id="G8i-nD-Dp3"/>
                             <constraint firstItem="9UX-c5-e6y" firstAttribute="top" secondItem="8in-Fi-Flf" secondAttribute="bottom" constant="38" id="XzS-3b-k7C"/>
-                            <constraint firstItem="8in-Fi-Flf" firstAttribute="leading" secondItem="WuU-yH-4nW" secondAttribute="trailing" constant="-46" id="avn-Ko-mIu"/>
-                            <constraint firstItem="KWm-aH-gvu" firstAttribute="top" secondItem="9UX-c5-e6y" secondAttribute="bottom" id="hLG-sn-4Gp"/>
+                            <constraint firstItem="KWm-aH-gvu" firstAttribute="top" secondItem="9UX-c5-e6y" secondAttribute="bottom" constant="56" id="hLG-sn-4Gp"/>
                             <constraint firstItem="8in-Fi-Flf" firstAttribute="centerX" secondItem="9UX-c5-e6y" secondAttribute="centerX" id="mPu-E4-mX6"/>
+                            <constraint firstItem="B70-TG-7nN" firstAttribute="top" secondItem="9UX-c5-e6y" secondAttribute="bottom" constant="7" id="muD-1i-JUn"/>
                             <constraint firstItem="8in-Fi-Flf" firstAttribute="top" secondItem="d0O-hY-fss" secondAttribute="bottom" constant="8" symbolic="YES" id="ptT-da-A6N"/>
                             <constraint firstItem="9UX-c5-e6y" firstAttribute="leading" secondItem="mvf-8O-4H9" secondAttribute="leading" id="vkT-14-fy8"/>
                             <constraint firstAttribute="trailing" secondItem="9UX-c5-e6y" secondAttribute="trailing" id="vkV-xg-5xj"/>
@@ -327,7 +352,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ewa-q2-vgT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2762" y="77"/>
+            <point key="canvasLocation" x="2089" y="1057"/>
         </scene>
         <!--Display RecipeVC-->
         <scene sceneID="fwf-As-0sK">
@@ -388,6 +413,6 @@
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="ztC-2M-s1c"/>
-        <segue reference="irR-hA-LHP"/>
+        <segue reference="gnX-mf-N5s"/>
     </inferredMetricsTieBreakers>
 </document>

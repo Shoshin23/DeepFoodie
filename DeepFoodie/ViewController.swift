@@ -70,6 +70,8 @@ class ViewController: UIViewController,ImagePickerDelegate {
         //loadingLabel.isHidden = true
         
         UserDefaults.standard.removeObject(forKey: "recipesjson")
+        UserDefaults.standard.removeObject(forKey: "ingredients")
+
         print("Cleared all NSUSERDEFAULTS")
         
         
