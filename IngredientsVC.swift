@@ -171,10 +171,13 @@ class IngredientsVC: UIViewController,UITableViewDelegate,UITableViewDataSource 
             
             if (resData.result.error != nil) {
                 let alert = UIAlertController(title: "Error", message: (resData.result.error?.localizedDescription)! + " Try once again.", preferredStyle: UIAlertControllerStyle.alert)
-                alert.addAction(UIAlertAction(title: "Ok.", style: UIAlertActionStyle.default, handler: nil))
+                alert.addAction(UIAlertAction(title: "Ok.", style: UIAlertActionStyle.default, handler: { (UIAlertAction) in
+                    self.getRecipes.title = "Show Recipes"
+                    self.getRecipes.isEnabled = true
+                    //self.tableView.reloadData()
+                }))
                 self.present(alert, animated: true, completion: nil)
-                self.getRecipes.title = "Show Recipes"
-                self.getRecipes.isEnabled = true
+                
             }
             
             self.performSegue(withIdentifier: "showRecipes", sender:self)
