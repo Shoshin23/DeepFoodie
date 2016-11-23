@@ -21,7 +21,7 @@ class IngredientsVC: UIViewController,UITableViewDelegate,UITableViewDataSource 
     
     @IBOutlet weak var getRecipes: FlatButton!
     var proper_pred = [String:Array<String>]() //get the goddamn float!
-    let taboo_words = ["vegetable","juice","citrus","sweet","pasture","dairy","dairy product"] //words that just dont convey any meaning. Are too generic.
+    let taboo_words = ["vegetable","juice","citrus","sweet","pasture","dairy","dairy product",] //words that just dont convey any meaning. Are too generic.
     var recipes_JSON:JSON! = nil
     
     var ingredients = [String?]()
@@ -40,21 +40,10 @@ class IngredientsVC: UIViewController,UITableViewDelegate,UITableViewDataSource 
         topLabel.force = 2.3
         topLabel.duration = 1.0
         topLabel.animate()
-        
-//        print(pred)
-//        print(proper_pred)
-//        print(ingredients)
-//        print(editedIngredient)
-//        self.tableView.reloadData()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         animateTable()
-//        print(pred)
-//        print(proper_pred)
-//        print(ingredients)
-//        print(editedIngredient)
-//        self.tableView.reloadData()
     }
     
     func animateTable() {
@@ -80,40 +69,42 @@ class IngredientsVC: UIViewController,UITableViewDelegate,UITableViewDataSource 
         }
     }
     
+    @IBAction func saveToMainViewController (_ segue:UIStoryboardSegue) {
+        let detailViewController = segue.source as! EditIngredientsVC
+        let index = detailViewController.index
+        let modelString = detailViewController.selectedIngredient
+        ingredients[index!] = modelString
+        tableView.reloadData()
+
+
+
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
        
-        
+        //set IngredientCell to reuse identifier. 
+        tableView.allowsSelectionDuringEditing = true;
         
         // Do any additional setup after loading the view.
         var conceptName = [String]()
         for op in pred {
-           // print(op.input.inputID)
-            for concept in (op.concepts) {
+            for concept in (op.concepts) { //get 'concepts'.
 //                print("In the new VC")
                 // print(op.input.inputID)
                 // print(concept.conceptName)
-                conceptName.append(concept.conceptName!)
+                conceptName.append(concept.conceptName!) //append conceptNames to the conceptName array.
 //                print(concept.score)
                 
                 
             }
-            proper_pred[op.input.inputID] = conceptName
+            proper_pred[op.input.inputID] = conceptName //append it it to this array called proper_pred that contains the input ID along with those conceptNames. I dont need all of them but just the one with the highest probability.
             conceptName.removeAll()
         }
         
         
         
         print("Proper_Pred: \(proper_pred)")
-//        if(UserDefaults.standard.value(forKey: "ingredients") != nil) {
-//            proper_pred = UserDefaults.standard.value(forKey: "ingredients") as! [String : Array<String>]
-//            self.tableView.reloadData()
-//        }
-//        
-//        if(UserDefaults.standard.value(forKey: "ingredients") == nil) {
-//            UserDefaults.standard.set(proper_pred, forKey: "ingredients")
-//        }
 
     }
 
@@ -135,23 +126,27 @@ class IngredientsVC: UIViewController,UITableViewDelegate,UITableViewDataSource 
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as UITableViewCell
         
-        cell.textLabel?.textColor = UIColor.white //change it to white.
-        
-        for word in taboo_words {
+        cell.textLabel?.textColor = UIColor.white
+        for word in taboo_words { //taboo_words is an array that contains common noun-words like 'sweet', 'juice' which dont really add any meaning to the shit. I need proper nouns not common nous.
             if let index = pred.index(of: word) {
             pred.remove(at: index)
         }
         }
-        ingredients.append(pred.first)
-        if(indexPath.row == selectedIndex) {
-            cell.textLabel?.text = editedIngredient
-        }
+        ingredients.append(pred.first) //append to the ingredients array.
 
-        cell.textLabel?.text = pred.first
+        cell.textLabel?.text = pred.first//take out only the very first(highest probability) term for that particular image.
+
         return cell
         
     }
-    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        editIngredients = Array(self.proper_pred.values)[indexPath.row]
+        selectedIndex = indexPath.row
+        print(editIngredients)
+        //performSegue(withIdentifier: "editIngredients", sender: self)
+       // self.performSegue(withIdentifier: "editIngredients", sender: self)
+    }
+
 
     @IBAction func getRecipeTapped(_ sender: UIButton) {
         
@@ -161,9 +156,9 @@ class IngredientsVC: UIViewController,UITableViewDelegate,UITableViewDataSource 
         
         
         //let queryString = "chicken"
-        let q2 = (ingredients as! [String]).joined(separator: "%20")
-        print(q2)//convert it to queryString to pass on to endpoint.
-        let todoEndpoint: String = "https://api.edamam.com/search?q=\(q2)&app_id=5a766e57&app_key=1cd67b2c35c7307027efc4c6ad1f46e2"
+        let queryString = (ingredients as! [String]).joined(separator: "%20")
+        print(queryString)//convert it to queryString to pass on to endpoint.
+        let todoEndpoint: String = "https://api.edamam.com/search?q=\(queryString)&app_id=5a766e57&app_key=1cd67b2c35c7307027efc4c6ad1f46e2"
         Alamofire.request(todoEndpoint).responseJSON { (resData) in
             //print(resData.result.value)
             
@@ -175,23 +170,17 @@ class IngredientsVC: UIViewController,UITableViewDelegate,UITableViewDataSource 
             }
             
             if (resData.result.error != nil) {
-                let alert = UIAlertController(title: "Error", message: resData.result.error?.localizedDescription, preferredStyle: UIAlertControllerStyle.alert)
+                let alert = UIAlertController(title: "Error", message: (resData.result.error?.localizedDescription)! + " Try once again.", preferredStyle: UIAlertControllerStyle.alert)
                 alert.addAction(UIAlertAction(title: "Ok.", style: UIAlertActionStyle.default, handler: nil))
                 self.present(alert, animated: true, completion: nil)
+                self.getRecipes.title = "Show Recipes"
+                self.getRecipes.isEnabled = true
             }
             
             self.performSegue(withIdentifier: "showRecipes", sender:self)
             
         }
         }
-    
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        editIngredients = Array(self.proper_pred.values)[indexPath.row]
-//        selectedIndex = indexPath.row
-//        print(editIngredients)
-        //performSegue(withIdentifier: "editIngredients", sender: self)
-
-    }
     
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -204,6 +193,8 @@ class IngredientsVC: UIViewController,UITableViewDelegate,UITableViewDataSource 
         
         if segue.identifier == "editIngredients" {
             let vc = segue.destination as! EditIngredientsVC
+            let path = tableView.indexPathForSelectedRow
+            vc.index = path?.row
             vc.pred = editIngredients
             
             

@@ -72,9 +72,9 @@ class RecipesVC: UIViewController,UITableViewDataSource,UITableViewDelegate {
         var dict = arrRes[indexPath.row]
         //print("DICT: \(dict)")
         cell.textLabel?.text = dict["recipe"]?["label"] as? String
-        print(dict["recipe"]?["label"])
+       // print(dict["recipe"]?["label"])
         //cell.detailTextLabel?.text = dict["recipe"]?["url"] as? String
-        print(dict["recipe"]?["url"])
+       // print(dict["recipe"]?["url"])
         return cell
     }
     

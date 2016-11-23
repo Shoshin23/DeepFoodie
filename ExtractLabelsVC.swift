@@ -55,10 +55,15 @@ class ExtractLabelsVC: UIViewController {
             
             if error != nil {
                 print("some error here.")
-                let alert = UIAlertController(title: "Error", message: error?.localizedDescription, preferredStyle: UIAlertControllerStyle.alert)
-                alert.addAction(UIAlertAction(title: "Ok.", style: UIAlertActionStyle.default, handler: nil))
+                
+                let alert = UIAlertController(title: "Error", message: (error?.localizedDescription)! + " Please try again.", preferredStyle: UIAlertControllerStyle.alert)
+                alert.addAction(UIAlertAction(title: "Ok.", style: UIAlertActionStyle.default, handler: { (UIAlertAction) in
+                    self.performSegue(withIdentifier: "cameraMenu", sender: self)
+                    
+                }))
+                //alert.addAction(UIAlertAction(title: "Ok.", style: UIAlertActionStyle.default, handler: nil))
                 self.present(alert, animated: true, completion: nil)
-                self.performSegue(withIdentifier: "cameraMenu", sender: nil) //incase of error. go back to the main menu.
+                //self.performSegue(withIdentifier: "cameraMenu", sender: self) //incase of error. go back to the main menu.
                 
             }
             else {
@@ -75,16 +80,6 @@ class ExtractLabelsVC: UIViewController {
                     } else {
                         print(self.finalOP)
                         self.finalOP = output!
-                        //                        for op in output! {
-                        //                            print("Input ID: \(op.input.inputID)")
-                        //                        for concept in (op.concepts)! {
-                        ////                            print(concept.conceptID)
-                        //                           // print(concept.conceptName)
-                        //                            //print(concept.score)
-                        //                        }
-                        //                        }
-                        
-                        
                     }
                     DispatchQueue.main.async {
                         self.performSegue(withIdentifier: "showIngredients", sender: self)
