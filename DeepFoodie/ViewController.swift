@@ -22,7 +22,8 @@ class ViewController: UIViewController,ImagePickerDelegate {
     var conceptName = [String]()
     var conceptScore = [Float]()
     var finalOP = [ClarifaiOutput]()
-    
+    let imagePickerController = ImagePickerController()
+
     var isCameraShown = true
     
     var images = [UIImage]()
@@ -48,8 +49,8 @@ class ViewController: UIViewController,ImagePickerDelegate {
         //loadingLabel.isHidden = false
         
         self.images = images
-        print(images)
-        print("Done button pressed.")
+        print("number of images: \(images)")
+        //print("Done button pressed.")
         //imagePicker.dismiss(animated: true, completion: nil)
         //segue to the new Loading VC with the images and do the processing work there. 
         imagePicker.dismiss(animated: true, completion: nil)
@@ -60,7 +61,7 @@ class ViewController: UIViewController,ImagePickerDelegate {
     
     
     func cancelButtonDidPress(_ imagePicker: ImagePickerController) {
-        
+        imagePicker.dismiss(animated: true, completion: nil)
     }
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -81,7 +82,6 @@ class ViewController: UIViewController,ImagePickerDelegate {
     override func viewDidAppear(_ animated: Bool) {
         
         if isCameraShown == true {
-        let imagePickerController = ImagePickerController()
         imagePickerController.delegate = self
         //imagePickerController.modalPresentationStyle = UIModalPresentationStyle.fullScreen
         

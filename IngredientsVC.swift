@@ -11,6 +11,7 @@ import Clarifai
 import Alamofire
 import SwiftyJSON
 import Spring
+import Material
 
 class IngredientsVC: UIViewController,UITableViewDelegate,UITableViewDataSource {
     
@@ -18,6 +19,7 @@ class IngredientsVC: UIViewController,UITableViewDelegate,UITableViewDataSource 
     
     @IBOutlet weak var topLabel: SpringLabel!
     
+    @IBOutlet weak var getRecipes: FlatButton!
     var proper_pred = [String:Array<String>]() //get the goddamn float!
     let taboo_words = ["vegetable","juice","citrus","sweet","pasture","dairy","dairy product"] //words that just dont convey any meaning. Are too generic.
     var recipes_JSON:JSON! = nil
@@ -154,7 +156,8 @@ class IngredientsVC: UIViewController,UITableViewDelegate,UITableViewDataSource 
     @IBAction func getRecipeTapped(_ sender: UIButton) {
         
         print("INGREDIENTS:\(ingredients)")
-        
+        getRecipes.title = "Hold on please"
+        getRecipes.isEnabled = false
         
         
         //let queryString = "chicken"

@@ -20,12 +20,13 @@ class ExtractLabelsVC: UIViewController {
     var conceptScore = [Float]()
     var finalOP = [ClarifaiOutput]()
 
+    @IBOutlet weak var extractLabel: UILabel!
 
     override func viewDidLoad() {
         super.viewDidLoad()
         let spinner = ALThreeCircleSpinner(frame: CGRect(x:(self.view.frame.size.width/2-25), y:(self.view.frame.size.height/2-50), width:60, height:60))
 
-        spinner.tintColor = UIColor.black
+        spinner.tintColor = UIColor.white
         self.view.addSubview(spinner)
 
         // Do any additional setup after loading the view.
@@ -40,13 +41,25 @@ class ExtractLabelsVC: UIViewController {
                 clarifaiImgArray.append(img!)
             }
             
+            
+            //[if no images are passed on to the extract function. Mostly when they click on 'Cancel'.]
+            if (clarifaiImgArray.count == 0) {
+                self.extractLabel.text = "Sorry. You need to pick an image."
+                self.performSegue(withIdentifier: "cameraMenu", sender: self)
+            } else {
+                self.extractLabel.text = "Extracting labels."
+            }
             print(clarifaiImgArray.count)
+            //[END]
+            
             
             if error != nil {
                 print("some error here.")
                 let alert = UIAlertController(title: "Error", message: error?.localizedDescription, preferredStyle: UIAlertControllerStyle.alert)
                 alert.addAction(UIAlertAction(title: "Ok.", style: UIAlertActionStyle.default, handler: nil))
                 self.present(alert, animated: true, completion: nil)
+                self.performSegue(withIdentifier: "cameraMenu", sender: nil) //incase of error. go back to the main menu.
+                
             }
             else {
                 print("Predicting shit now. ")
@@ -56,6 +69,8 @@ class ExtractLabelsVC: UIViewController {
                         let alert = UIAlertController(title: "Error", message: error?.localizedDescription, preferredStyle: UIAlertControllerStyle.alert)
                         alert.addAction(UIAlertAction(title: "Ok.", style: UIAlertActionStyle.default, handler: nil))
                         self.present(alert, animated: true, completion: nil)
+                        self.performSegue(withIdentifier: "cameraMenu", sender: nil) //incase of error. back to the main menu. 
+
                         
                     } else {
                         print(self.finalOP)
@@ -96,6 +111,11 @@ class ExtractLabelsVC: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    func delayWithSeconds(_ seconds: Double, completion: @escaping () -> ()) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + seconds) {
+            completion()
+        }
+    }
 
     /*
     // MARK: - Navigation
