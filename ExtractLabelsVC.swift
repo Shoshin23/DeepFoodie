@@ -6,6 +6,9 @@
 //  Copyright © 2016 Karthik Kannan. All rights reserved.
 //
 
+//Do majority of the extraction work here. Just send a final Array of Arrays.
+
+
 import UIKit
 import Clarifai
 import ALThreeCircleSpinner
@@ -19,6 +22,8 @@ class ExtractLabelsVC: UIViewController {
     var conceptName = [String]()
     var conceptScore = [Float]()
     var finalOP = [ClarifaiOutput]()
+    
+    var proper_pred = [String:Array<String>]()
 
     @IBOutlet weak var extractLabel: UILabel!
 
@@ -96,7 +101,24 @@ class ExtractLabelsVC: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "showIngredients" {
             let vc = segue.destination as! IngredientsVC
-            vc.pred = finalOP
+            //vc.pred = finalOP
+            var conceptName = [String]()
+            for op in finalOP {
+                for concept in (op.concepts) { //get 'concepts'.
+                    //                print("In the new VC")
+                    // print(op.input.inputID)
+                    // print(concept.conceptName)
+                    conceptName.append(concept.conceptName!) //append conceptNames to the conceptName array.
+                    //                print(concept.score)
+                    
+                    
+                }
+                proper_pred[op.input.inputID] = conceptName //append it it to this array called proper_pred that contains the input ID along with those conceptNames. I dont need all of them but just the one with the highest probability.
+                conceptName.removeAll()
+            }
+            
+            vc.proper_pred = proper_pred
+
         }
     }
     

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
-    <device id="retina4_7" orientation="portrait">
+    <device id="retina4_0" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -19,42 +19,39 @@
                         <viewControllerLayoutGuide type="bottom" id="xb3-aO-Qok"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="FodoLaunch" translatesAutoresizingMaskIntoConstraints="NO" id="DLc-Yt-QJe">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                            </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="FodoLaunchLogo" translatesAutoresizingMaskIntoConstraints="NO" id="NUd-ff-EiS">
-                                <rect key="frame" x="67" y="112" width="240" height="249"/>
+                                <rect key="frame" x="0.0" y="-766" width="320" height="1334"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Get Recipes from photos." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eXP-p4-tj4">
-                                <rect key="frame" x="16" y="429" width="343" height="38"/>
+                                <rect key="frame" x="12" y="363" width="296" height="31"/>
                                 <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="22"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="FodoLaunchLogo" translatesAutoresizingMaskIntoConstraints="NO" id="NUd-ff-EiS">
+                                <rect key="frame" x="122" y="20" width="76" height="433"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="NUd-ff-EiS" firstAttribute="centerX" secondItem="DLc-Yt-QJe" secondAttribute="centerX" id="4t1-iQ-S3G"/>
-                            <constraint firstItem="DLc-Yt-QJe" firstAttribute="top" secondItem="NUd-ff-EiS" secondAttribute="bottom" constant="-361" id="AEd-s4-uR5"/>
-                            <constraint firstItem="eXP-p4-tj4" firstAttribute="leading" secondItem="NUd-ff-EiS" secondAttribute="leading" constant="-51" id="BdB-tJ-h82"/>
-                            <constraint firstItem="NUd-ff-EiS" firstAttribute="top" secondItem="Llm-lL-Icb" secondAttribute="bottom" constant="92" id="ETL-k6-vJH"/>
+                            <constraint firstItem="eXP-p4-tj4" firstAttribute="leading" secondItem="NUd-ff-EiS" secondAttribute="leading" constant="-110" id="BdB-tJ-h82"/>
+                            <constraint firstItem="xb3-aO-Qok" firstAttribute="top" secondItem="eXP-p4-tj4" secondAttribute="bottom" constant="174" id="CyF-s3-NJY"/>
+                            <constraint firstItem="NUd-ff-EiS" firstAttribute="top" secondItem="Llm-lL-Icb" secondAttribute="bottom" id="ETL-k6-vJH"/>
                             <constraint firstItem="DLc-Yt-QJe" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" id="Hwn-mf-k3f"/>
-                            <constraint firstItem="eXP-p4-tj4" firstAttribute="trailing" secondItem="NUd-ff-EiS" secondAttribute="trailing" constant="52" id="Mnz-PT-qZB"/>
-                            <constraint firstItem="eXP-p4-tj4" firstAttribute="top" secondItem="NUd-ff-EiS" secondAttribute="bottom" constant="68" id="PQ4-gT-MnU"/>
-                            <constraint firstItem="xb3-aO-Qok" firstAttribute="top" secondItem="eXP-p4-tj4" secondAttribute="bottom" constant="200" id="TUV-Gk-oaq"/>
+                            <constraint firstItem="eXP-p4-tj4" firstAttribute="trailing" secondItem="NUd-ff-EiS" secondAttribute="trailing" constant="110" id="Mnz-PT-qZB"/>
                             <constraint firstItem="xb3-aO-Qok" firstAttribute="top" secondItem="DLc-Yt-QJe" secondAttribute="bottom" id="cjj-dT-Fmj"/>
                             <constraint firstAttribute="trailing" secondItem="DLc-Yt-QJe" secondAttribute="trailing" id="oeE-7q-MCt"/>
-                            <constraint firstItem="DLc-Yt-QJe" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" id="sce-1e-44M"/>
-                            <constraint firstItem="NUd-ff-EiS" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leadingMargin" constant="51" id="za2-qV-A97"/>
+                            <constraint firstItem="NUd-ff-EiS" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leadingMargin" constant="106" id="za2-qV-A97"/>
                         </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="52" y="374.66266866566718"/>
+            <point key="canvasLocation" x="50.625" y="372.88732394366195"/>
         </scene>
     </scenes>
     <resources>

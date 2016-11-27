@@ -20,13 +20,13 @@ class IngredientsVC: UIViewController,UITableViewDelegate,UITableViewDataSource 
     @IBOutlet weak var topLabel: SpringLabel!
     
     @IBOutlet weak var getRecipes: FlatButton!
+    
+   // var arrayOfIngredients = [[String]]()
     var proper_pred = [String:Array<String>]() //get the goddamn float!
-    let taboo_words = ["vegetable","juice","citrus","sweet","pasture","dairy","dairy product",] //words that just dont convey any meaning. Are too generic.
+    let taboo_words = ["vegetable","juice","citrus","sweet","pasture","dairy","dairy product","candy"] //words that just dont convey any meaning. Are too generic.
     var recipes_JSON:JSON! = nil
     
     var ingredients = [String?]()
-    
-    var pred = [ClarifaiOutput]()
     
     var editIngredients = [String]()
     
@@ -82,29 +82,8 @@ class IngredientsVC: UIViewController,UITableViewDelegate,UITableViewDataSource 
     
     override func viewDidLoad() {
         super.viewDidLoad()
-       
-        //set IngredientCell to reuse identifier. 
-        tableView.allowsSelectionDuringEditing = true;
-        
-        // Do any additional setup after loading the view.
-        var conceptName = [String]()
-        for op in pred {
-            for concept in (op.concepts) { //get 'concepts'.
-//                print("In the new VC")
-                // print(op.input.inputID)
-                // print(concept.conceptName)
-                conceptName.append(concept.conceptName!) //append conceptNames to the conceptName array.
-//                print(concept.score)
-                
-                
-            }
-            proper_pred[op.input.inputID] = conceptName //append it it to this array called proper_pred that contains the input ID along with those conceptNames. I dont need all of them but just the one with the highest probability.
-            conceptName.removeAll()
-        }
-        
-        
-        
         print("Proper_Pred: \(proper_pred)")
+        //print(Array(proper_pred.values))
 
     }
 
